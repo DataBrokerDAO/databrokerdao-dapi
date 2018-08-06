@@ -1,8 +1,7 @@
 pragma solidity ^0.4.24;
 
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
-import "openzeppelin-solidity/contracts/token/ERC20/BurnableToken.sol";
-import "openzeppelin-solidity/contracts/token/ERC20/MintableToken.sol";
+import "../token/LocalDTXToken.sol";
 import "./Validatable.sol";
 
 
@@ -39,11 +38,6 @@ contract ForeignBridge is Ownable, Validatable {
     address _recipient,
     uint256 _amount
   );
-  event WithdrawRequest(
-    address _to,
-    uint256 _amount,
-    bytes32 _withdrawhash
-  );
   event WithdrawRequestSigned(
     bytes32 _withdrawRequestsHash,
     bytes32 _transactionHash,
@@ -79,10 +73,9 @@ contract ForeignBridge is Ownable, Validatable {
     require(_mainToken != 0x0, "the main token should not be 0");
     require(_foreignToken != 0x0, "the foreign token should not be 0");
 
-    Ownable t = Ownable(_foreignToken);
+    LocalDTXToken t = LocalDTXToken(_foreignToken);
 
     require(address(t) != 0x0, "the foreign token should not be 0");
-    require(t.owner() == address(this), "this bridge should be the owner of the foreign token");
 
     tokenMap[_mainToken] = t;
     registeredTokens.push(_mainToken);
@@ -153,7 +146,7 @@ contract ForeignBridge is Ownable, Validatable {
       );
     } else {
       requestsDone[reqHash] = true;
-      MintableToken(tokenMap[_mainToken]).mint(_recipient,_amount);
+      LocalDTXToken(tokenMap[_mainToken]).mint(_recipient,_amount);
       emit MintRequestExecuted(
         reqHash,
         _transactionHash,
@@ -229,7 +222,7 @@ contract ForeignBridge is Ownable, Validatable {
       requestsDone[reqHash] = true;
 
       // Burn the tokens we received
-      BurnableToken(tokenMap[_mainToken]).burn(_amount);
+      LocalDTXToken(tokenMap[_mainToken]).burn(address(this), _amount);
 
       emit WithdrawRequestGranted(
         reqHash,

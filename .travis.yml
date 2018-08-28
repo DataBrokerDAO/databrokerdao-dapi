@@ -11,7 +11,7 @@ notifications:
       - settlemint:5QuOPa3Z4kJbfbNIgei0asur#mint
 
 node_js:
-  - '9'
+  - '8'
 
 
 before_install:

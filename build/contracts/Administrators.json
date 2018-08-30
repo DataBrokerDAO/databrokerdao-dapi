@@ -762,8 +762,8 @@
         }
       },
       "links": {},
-      "address": "0x4b8144c11eb3d8b4a08d20ef1f1d741d5e79e20f",
-      "transactionHash": "0x5c1644b24d16729e0fd950d1e4a95715a19618821a249f01f58dc1ce48e684ec"
+      "address": "0x60b9f8fb48ebd15b2191a9b2ab30e0a4228d4fc0",
+      "transactionHash": "0xe385fe934275861bb7bbea10f43888492362495fadb9b0f817ed8bddd1bf4d8b"
     },
     "8996": {
       "events": {
@@ -846,5 +846,5 @@
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-08-28T16:16:20.608Z"
+  "updatedAt": "2018-08-29T15:06:50.159Z"
 }

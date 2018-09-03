@@ -7,7 +7,7 @@ const {
   createAccounts,
 } = require('@settlemint/solidity-mint')
 
-async function performMigration(deployer, network, accounts) {
+module.exports = async function(deployer, network, accounts) {
   const dGateKeeper = await GateKeeper.deployed()
 
   // Administrator
@@ -25,13 +25,4 @@ async function performMigration(deployer, network, accounts) {
       : 'discover cousin hover skin skirt original crane spatial wrong barely keep jump',
     mintrc.environments
   )
-}
-
-module.exports = function(deployer, network, accounts) {
-  deployer
-    .then(() => performMigration(deployer, network, accounts))
-    .catch(error => {
-      console.log(error)
-      process.exit(1)
-    })
 }

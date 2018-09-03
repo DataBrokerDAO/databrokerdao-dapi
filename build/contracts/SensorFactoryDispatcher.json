@@ -13,7 +13,8 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "signature": "0x17f82139"
     },
     {
       "constant": true,
@@ -27,7 +28,8 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "signature": "0x45d61ded"
     },
     {
       "constant": true,
@@ -41,7 +43,8 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "signature": "0xd4b83992"
     },
     {
       "inputs": [
@@ -52,12 +55,31 @@
       ],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "constructor"
+      "type": "constructor",
+      "signature": "constructor"
     },
     {
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "fallback"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "originalTarget",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "newTarget",
+          "type": "address"
+        }
+      ],
+      "name": "TargetChanged",
+      "type": "event",
+      "signature": "0x4d11d6210a5e807da812a693b5d341a870571b5fc31158172207a3d99c911ccd"
     },
     {
       "constant": false,
@@ -71,32 +93,33 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function"
+      "type": "function",
+      "signature": "0x776d1a01"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b506040516020806103bc833981016040525160008054600160a060020a03909216600160a060020a031992831617905560028054909116301790556103628061005a6000396000f3006080604052600436106100615763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166317f82139811461009c57806345d61ded146100c3578063776d1a01146100f4578063d4b8399214610117575b34801561006d57600080fd5b506001546000803591600160a060020a03169036908037600080366000846127105a03f43d806000803e806000f35b3480156100a857600080fd5b506100b161012c565b60408051918252519081900360200190f35b3480156100cf57600080fd5b506100d8610150565b60408051600160a060020a039092168252519081900360200190f35b34801561010057600080fd5b50610115600160a060020a036004351661015f565b005b34801561012357600080fd5b506100d8610173565b7f555047524144455f434f4e54524143540000000000000000000000000000000081565b600054600160a060020a031681565b61016881610182565b61017061018b565b50565b600154600160a060020a031681565b61017081610210565b600254604080517f3d188fab0000000000000000000000000000000000000000000000000000000081523060048201526000604482018190529151600160a060020a0390931692633d188fab9260648084019391929182900301818387803b1580156101f657600080fd5b505af115801561020a573d6000803e3d6000fd5b50505050565b7f555047524144455f434f4e54524143540000000000000000000000000000000061023b3382610276565b151561024657600080fd5b506001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b60008054600160a060020a0316158061032f575060008054604080517f6d6712d8000000000000000000000000000000000000000000000000000000008152600160a060020a0387811660048301523060248301526044820187905291519190921692636d6712d892606480820193602093909283900390910190829087803b15801561030257600080fd5b505af1158015610316573d6000803e3d6000fd5b505050506040513d602081101561032c57600080fd5b50515b93925050505600a165627a7a7230582043c270d0a8b5a03d35f01c44d9b56e4b48a003a0e41a4a0f91cafd4f7a1d445a0029",
-  "deployedBytecode": "0x6080604052600436106100615763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166317f82139811461009c57806345d61ded146100c3578063776d1a01146100f4578063d4b8399214610117575b34801561006d57600080fd5b506001546000803591600160a060020a03169036908037600080366000846127105a03f43d806000803e806000f35b3480156100a857600080fd5b506100b161012c565b60408051918252519081900360200190f35b3480156100cf57600080fd5b506100d8610150565b60408051600160a060020a039092168252519081900360200190f35b34801561010057600080fd5b50610115600160a060020a036004351661015f565b005b34801561012357600080fd5b506100d8610173565b7f555047524144455f434f4e54524143540000000000000000000000000000000081565b600054600160a060020a031681565b61016881610182565b61017061018b565b50565b600154600160a060020a031681565b61017081610210565b600254604080517f3d188fab0000000000000000000000000000000000000000000000000000000081523060048201526000604482018190529151600160a060020a0390931692633d188fab9260648084019391929182900301818387803b1580156101f657600080fd5b505af115801561020a573d6000803e3d6000fd5b50505050565b7f555047524144455f434f4e54524143540000000000000000000000000000000061023b3382610276565b151561024657600080fd5b506001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b60008054600160a060020a0316158061032f575060008054604080517f6d6712d8000000000000000000000000000000000000000000000000000000008152600160a060020a0387811660048301523060248301526044820187905291519190921692636d6712d892606480820193602093909283900390910190829087803b15801561030257600080fd5b505af1158015610316573d6000803e3d6000fd5b505050506040513d602081101561032c57600080fd5b50515b93925050505600a165627a7a7230582043c270d0a8b5a03d35f01c44d9b56e4b48a003a0e41a4a0f91cafd4f7a1d445a0029",
-  "sourceMap": "650:310:10:-;;;719:128;8:9:-1;5:2;;;30:1;27;20:12;5:2;719:128:10;;;;;;;;;;;;;245:10:17;:36;;-1:-1:-1;;;;;245:36:17;;;-1:-1:-1;;;;;;245:36:17;;;;;;141:6:30;:24;;;;;826:4:10;141:24:30;;;650:310:10;;;;;;",
-  "deployedSourceMap": "650:310:10:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;667:6:36;;600:10;634:15;;;-1:-1:-1;;;;;667:6:36;;720:12;;600:10;697:36;816:1;813;799:12;794:3;788:4;780:5;775:3;771:15;758:60;838:14;880:5;877:1;874;859:27;903:5;900:1;893:16;1141:61:37;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1141:61:37;;;;;;;;;;;;;;;;;;;;77:28:17;;8:9:-1;5:2;;;30:1;27;20:12;5:2;77:28:17;;;;;;;;-1:-1:-1;;;;;77:28:17;;;;;;;;;;;;;;851:107:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;851:107:10;-1:-1:-1;;;;;851:107:10;;;;;;;1207:21:37;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1207:21:37;;;;1141:61;;;:::o;77:28:17:-;;;-1:-1:-1;;;;;77:28:17;;:::o;851:107:10:-;900:24;916:7;900:15;:24::i;:::-;930:23;:21;:23::i;:::-;851:107;:::o;1207:21:37:-;;;-1:-1:-1;;;;;1207:21:37;;:::o;923:70:36:-;972:16;980:7;972;:16::i;149:91:31:-;191:6;;:44;;;;;;222:4;191:44;;;;:6;:44;;;;;;;;-1:-1:-1;;;;;191:6:31;;;;:22;;:44;;;;;:6;;:44;;;;;;:6;;:44;;;5:2:-1;;;;30:1;27;20:12;5:2;191:44:31;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;191:44:31;;;;149:91::o;1304:93:37:-;1343:16;153:29:17;164:10;176:5;153:10;:29::i;:::-;145:38;;;;;;;;-1:-1:-1;1376:6:37;:16;;-1:-1:-1;;1376:16:37;-1:-1:-1;;;;;1376:16:37;;;;;;;;;;1304:93::o;290:182:17:-;365:4;392:10;;-1:-1:-1;;;;;392:10:17;384:24;;:83;;-1:-1:-1;412:10:17;;;:55;;;;;;-1:-1:-1;;;;;412:55:17;;;;;;;454:4;412:55;;;;;;;;;;;;:10;;;;;:24;;:55;;;;;;;;;;;;;;;;;;:10;:55;;;5:2:-1;;;;30:1;27;20:12;5:2;412:55:17;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;412:55:17;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;412:55:17;384:83;377:90;290:182;-1:-1:-1;;;290:182:17:o",
-  "source": "pragma solidity ^0.4.20;\n\nimport \"@settlemint/solidity-mint/contracts/utility/upgrading/Dispatcher.sol\";\nimport \"@settlemint/solidity-mint/contracts/marketplaces/tokensystem/interfaces/IToken.sol\";\nimport \"@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListing.sol\";\nimport \"@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListingFactory.sol\";\nimport \"@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/ChallengeRegistry.sol\";\nimport \"@settlemint/solidity-mint/contracts/utility/caching/CachedByAddress.sol\";\n\n\n\n/**\n * Dispatches calls to the sensor factory\n */\ncontract SensorFactoryDispatcher is Dispatcher, CachedByAddress {\n\n  function SensorFactoryDispatcher(\n    address _gateKeeper\n  )\n    Secured(_gateKeeper)\n    CachedByAddress(this)\n    public\n  {}\n\n  function setTarget(address _target) public {\n    super.setTarget(_target);\n    super.invalidateCache();\n  }\n}\n",
-  "sourcePath": "/Users/peterjanbrone/databrokerdao/databrokerdao-dapi/contracts/sensor/SensorFactoryDispatcher.sol",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516020806103f2833981016040525160008054600160a060020a03909216600160a060020a03199092169190911790556103a0806100526000396000f3006080604052600436106100615763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166317f82139811461009c57806345d61ded146100c3578063776d1a01146100f4578063d4b8399214610117575b34801561006d57600080fd5b506001546000803591600160a060020a03169036908037600080366000846127105a03f43d806000803e806000f35b3480156100a857600080fd5b506100b161012c565b60408051918252519081900360200190f35b3480156100cf57600080fd5b506100d8610150565b60408051600160a060020a039092168252519081900360200190f35b34801561010057600080fd5b50610115600160a060020a036004351661015f565b005b34801561012357600080fd5b506100d861016b565b7f555047524144455f434f4e54524143540000000000000000000000000000000081565b600054600160a060020a031681565b6101688161017a565b50565b600154600160a060020a031681565b610168817f555047524144455f434f4e5452414354000000000000000000000000000000006101a933826102b4565b151561023c57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602160248201527f596f7520646f206e6f7420686176652074686520636f727265637420726f6c6560448201527f7300000000000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b60015460408051600160a060020a039283168152918416602083015280517f4d11d6210a5e807da812a693b5d341a870571b5fc31158172207a3d99c911ccd9281900390910190a1506001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b60008054600160a060020a0316158061036d575060008054604080517f6d6712d8000000000000000000000000000000000000000000000000000000008152600160a060020a0387811660048301523060248301526044820187905291519190921692636d6712d892606480820193602093909283900390910190829087803b15801561034057600080fd5b505af1158015610354573d6000803e3d6000fd5b505050506040513d602081101561036a57600080fd5b50515b93925050505600a165627a7a72305820343cedb4d6fced7f80c5f07e0e97639ac63e84771a5756f2d0fc4da9bf59dba40029",
+  "deployedBytecode": "0x6080604052600436106100615763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166317f82139811461009c57806345d61ded146100c3578063776d1a01146100f4578063d4b8399214610117575b34801561006d57600080fd5b506001546000803591600160a060020a03169036908037600080366000846127105a03f43d806000803e806000f35b3480156100a857600080fd5b506100b161012c565b60408051918252519081900360200190f35b3480156100cf57600080fd5b506100d8610150565b60408051600160a060020a039092168252519081900360200190f35b34801561010057600080fd5b50610115600160a060020a036004351661015f565b005b34801561012357600080fd5b506100d861016b565b7f555047524144455f434f4e54524143540000000000000000000000000000000081565b600054600160a060020a031681565b6101688161017a565b50565b600154600160a060020a031681565b610168817f555047524144455f434f4e5452414354000000000000000000000000000000006101a933826102b4565b151561023c57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602160248201527f596f7520646f206e6f7420686176652074686520636f727265637420726f6c6560448201527f7300000000000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b60015460408051600160a060020a039283168152918416602083015280517f4d11d6210a5e807da812a693b5d341a870571b5fc31158172207a3d99c911ccd9281900390910190a1506001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b60008054600160a060020a0316158061036d575060008054604080517f6d6712d8000000000000000000000000000000000000000000000000000000008152600160a060020a0387811660048301523060248301526044820187905291519190921692636d6712d892606480820193602093909283900390910190829087803b15801561034057600080fd5b505af1158015610354573d6000803e3d6000fd5b505050506040513d602081101561036a57600080fd5b50515b93925050505600a165627a7a72305820343cedb4d6fced7f80c5f07e0e97639ac63e84771a5756f2d0fc4da9bf59dba40029",
+  "sourceMap": "567:217:10:-;;;619:81;8:9:-1;5:2;;;30:1;27;20:12;5:2;619:81:10;;;;;;;;;;;;;282:10:17;:36;;-1:-1:-1;;;;;282:36:17;;;-1:-1:-1;;;;;;282:36:17;;;;;;;;;567:217:10;;;;;;",
+  "deployedSourceMap": "567:217:10:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;671:6:32;;600:10;634:15;;;-1:-1:-1;;;;;671:6:32;;724:12;;600:10;701:36;820:1;817;803:12;798:3;792:4;784:5;779:3;775:15;762:60;842:14;884:5;881:1;878;863:27;907:5;904:1;897:16;1142:61:33;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1142:61:33;;;;;;;;;;;;;;;;;;;;77:28:17;;8:9:-1;5:2;;;30:1;27;20:12;5:2;77:28:17;;;;;;;;-1:-1:-1;;;;;77:28:17;;;;;;;;;;;;;;704:78:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;704:78:10;-1:-1:-1;;;;;704:78:10;;;;;;;1207:21:33;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1207:21:33;;;;1142:61;;;:::o;77:28:17:-;;;-1:-1:-1;;;;;77:28:17;;:::o;704:78:10:-;753:24;769:7;753:15;:24::i;:::-;704:78;:::o;1207:21:33:-;;;-1:-1:-1;;;;;1207:21:33;;:::o;927:70:32:-;976:16;984:7;1419:16:33;153:29:17;164:10;176:5;153:10;:29::i;:::-;145:75;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1462:6:33;;1448:30;;;-1:-1:-1;;;;;1462:6:33;;;1448:30;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;1484:6:33;:16;;-1:-1:-1;;1484:16:33;-1:-1:-1;;;;;1484:16:33;;;;;;;;;;1371:134::o;327:182:17:-;402:4;429:10;;-1:-1:-1;;;;;429:10:17;421:24;;:83;;-1:-1:-1;449:10:17;;;:55;;;;;;-1:-1:-1;;;;;449:55:17;;;;;;;491:4;449:55;;;;;;;;;;;;:10;;;;;:24;;:55;;;;;;;;;;;;;;;;;;:10;:55;;;5:2:-1;;;;30:1;27;20:12;5:2;449:55:17;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;449:55:17;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;449:55:17;421:83;414:90;327:182;-1:-1:-1;;;327:182:17:o",
+  "source": "pragma solidity ^0.4.24;\n\nimport \"@settlemint/solidity-mint/contracts/utility/upgrading/Dispatcher.sol\";\nimport \"@settlemint/solidity-mint/contracts/marketplaces/tokensystem/interfaces/IToken.sol\";\nimport \"@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListing.sol\";\nimport \"@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListingFactory.sol\";\nimport \"@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/ChallengeRegistry.sol\";\n\n\n/**\n * Dispatches calls to the sensor factory\n */\ncontract SensorFactoryDispatcher is Dispatcher {\n\n  constructor(\n    address _gateKeeper\n  )\n    public\n    Secured(_gateKeeper)\n  {}\n\n  function setTarget(address _target) public {\n    super.setTarget(_target);\n  }\n}\n",
+  "sourcePath": "/Users/roderik/Development/databrokerdao-dapi/contracts/sensor/SensorFactoryDispatcher.sol",
   "ast": {
-    "absolutePath": "/Users/peterjanbrone/databrokerdao/databrokerdao-dapi/contracts/sensor/SensorFactoryDispatcher.sol",
+    "absolutePath": "/Users/roderik/Development/databrokerdao-dapi/contracts/sensor/SensorFactoryDispatcher.sol",
     "exportedSymbols": {
       "SensorFactoryDispatcher": [
-        969
+        873
       ]
     },
-    "id": 970,
+    "id": 874,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 929,
+        "id": 844,
         "literals": [
           "solidity",
           "^",
           "0.4",
-          ".20"
+          ".24"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:24:10"
@@ -104,10 +127,10 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/utility/upgrading/Dispatcher.sol",
         "file": "@settlemint/solidity-mint/contracts/utility/upgrading/Dispatcher.sol",
-        "id": 930,
+        "id": 845,
         "nodeType": "ImportDirective",
-        "scope": 970,
-        "sourceUnit": 4716,
+        "scope": 874,
+        "sourceUnit": 4253,
         "src": "26:78:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -115,10 +138,10 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokensystem/interfaces/IToken.sol",
         "file": "@settlemint/solidity-mint/contracts/marketplaces/tokensystem/interfaces/IToken.sol",
-        "id": 931,
+        "id": 846,
         "nodeType": "ImportDirective",
-        "scope": 970,
-        "sourceUnit": 4506,
+        "scope": 874,
+        "sourceUnit": 4156,
         "src": "105:92:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -126,10 +149,10 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListing.sol",
         "file": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListing.sol",
-        "id": 932,
+        "id": 847,
         "nodeType": "ImportDirective",
-        "scope": 970,
-        "sourceUnit": 3354,
+        "scope": 874,
+        "sourceUnit": 3088,
         "src": "198:103:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -137,10 +160,10 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListingFactory.sol",
         "file": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListingFactory.sol",
-        "id": 933,
+        "id": 848,
         "nodeType": "ImportDirective",
-        "scope": 970,
-        "sourceUnit": 3386,
+        "scope": 874,
+        "sourceUnit": 3120,
         "src": "302:110:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -148,22 +171,11 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/ChallengeRegistry.sol",
         "file": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/ChallengeRegistry.sol",
-        "id": 934,
+        "id": 849,
         "nodeType": "ImportDirective",
-        "scope": 970,
-        "sourceUnit": 2100,
+        "scope": 874,
+        "sourceUnit": 1909,
         "src": "413:101:10",
-        "symbolAliases": [],
-        "unitAlias": ""
-      },
-      {
-        "absolutePath": "@settlemint/solidity-mint/contracts/utility/caching/CachedByAddress.sol",
-        "file": "@settlemint/solidity-mint/contracts/utility/caching/CachedByAddress.sol",
-        "id": 935,
-        "nodeType": "ImportDirective",
-        "scope": 970,
-        "sourceUnit": 4598,
-        "src": "515:81:10",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -173,70 +185,48 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 936,
+              "id": 850,
               "name": "Dispatcher",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4715,
-              "src": "686:10:10",
+              "referencedDeclaration": 4252,
+              "src": "603:10:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Dispatcher_$4715",
+                "typeIdentifier": "t_contract$_Dispatcher_$4252",
                 "typeString": "contract Dispatcher"
               }
             },
-            "id": 937,
+            "id": 851,
             "nodeType": "InheritanceSpecifier",
-            "src": "686:10:10"
-          },
-          {
-            "arguments": null,
-            "baseName": {
-              "contractScope": null,
-              "id": 938,
-              "name": "CachedByAddress",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4597,
-              "src": "698:15:10",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CachedByAddress_$4597",
-                "typeString": "contract CachedByAddress"
-              }
-            },
-            "id": 939,
-            "nodeType": "InheritanceSpecifier",
-            "src": "698:15:10"
+            "src": "603:10:10"
           }
         ],
         "contractDependencies": [
-          1816,
-          4568,
-          4597,
-          4715,
-          4739
+          1683,
+          4252,
+          4287
         ],
         "contractKind": "contract",
         "documentation": "Dispatches calls to the sensor factory",
         "fullyImplemented": true,
-        "id": 969,
+        "id": 873,
         "linearizedBaseContracts": [
-          969,
-          4597,
-          4568,
-          4715,
-          4739,
-          1816
+          873,
+          4252,
+          4287,
+          1683
         ],
         "name": "SensorFactoryDispatcher",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 950,
+              "id": 859,
               "nodeType": "Block",
-              "src": "845:2:10",
+              "src": "698:2:10",
               "statements": []
             },
             "documentation": null,
-            "id": 951,
+            "id": 860,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -245,82 +235,49 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 944,
+                    "id": 856,
                     "name": "_gateKeeper",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 941,
-                    "src": "793:11:10",
+                    "referencedDeclaration": 853,
+                    "src": "683:11:10",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   }
                 ],
-                "id": 945,
+                "id": 857,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 943,
+                  "id": 855,
                   "name": "Secured",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1816,
-                  "src": "785:7:10",
+                  "referencedDeclaration": 1683,
+                  "src": "675:7:10",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Secured_$1816_$",
+                    "typeIdentifier": "t_type$_t_contract$_Secured_$1683_$",
                     "typeString": "type(contract Secured)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "785:20:10"
-              },
-              {
-                "arguments": [
-                  {
-                    "argumentTypes": null,
-                    "id": 947,
-                    "name": "this",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 4931,
-                    "src": "826:4:10",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_SensorFactoryDispatcher_$969",
-                      "typeString": "contract SensorFactoryDispatcher"
-                    }
-                  }
-                ],
-                "id": 948,
-                "modifierName": {
-                  "argumentTypes": null,
-                  "id": 946,
-                  "name": "CachedByAddress",
-                  "nodeType": "Identifier",
-                  "overloadedDeclarations": [],
-                  "referencedDeclaration": 4597,
-                  "src": "810:15:10",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_CachedByAddress_$4597_$",
-                    "typeString": "type(contract CachedByAddress)"
-                  }
-                },
-                "nodeType": "ModifierInvocation",
-                "src": "810:21:10"
+                "src": "675:20:10"
               }
             ],
-            "name": "SensorFactoryDispatcher",
+            "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 942,
+              "id": 854,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 941,
+                  "id": 853,
                   "name": "_gateKeeper",
                   "nodeType": "VariableDeclaration",
-                  "scope": 951,
-                  "src": "757:19:10",
+                  "scope": 860,
+                  "src": "636:19:10",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -328,10 +285,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 940,
+                    "id": 852,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "757:7:10",
+                    "src": "636:7:10",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -341,26 +298,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "751:29:10"
+              "src": "630:29:10"
             },
             "payable": false,
             "returnParameters": {
-              "id": 949,
+              "id": 858,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "845:0:10"
+              "src": "698:0:10"
             },
-            "scope": 969,
-            "src": "719:128:10",
+            "scope": 873,
+            "src": "619:81:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 967,
+              "id": 871,
               "nodeType": "Block",
-              "src": "894:64:10",
+              "src": "747:35:10",
               "statements": [
                 {
                   "expression": {
@@ -368,12 +325,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 959,
+                        "id": 868,
                         "name": "_target",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 953,
-                        "src": "916:7:10",
+                        "referencedDeclaration": 862,
+                        "src": "769:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -389,32 +346,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 956,
+                        "id": 865,
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4932,
-                        "src": "900:5:10",
+                        "referencedDeclaration": 4472,
+                        "src": "753:5:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_super$_SensorFactoryDispatcher_$969",
+                          "typeIdentifier": "t_super$_SensorFactoryDispatcher_$873",
                           "typeString": "contract super SensorFactoryDispatcher"
                         }
                       },
-                      "id": 958,
+                      "id": 867,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "setTarget",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4714,
-                      "src": "900:15:10",
+                      "referencedDeclaration": 4251,
+                      "src": "753:15:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 960,
+                    "id": 869,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -422,71 +379,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "900:24:10",
+                    "src": "753:24:10",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 961,
+                  "id": 870,
                   "nodeType": "ExpressionStatement",
-                  "src": "900:24:10"
-                },
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "arguments": [],
-                    "expression": {
-                      "argumentTypes": [],
-                      "expression": {
-                        "argumentTypes": null,
-                        "id": 962,
-                        "name": "super",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 4932,
-                        "src": "930:5:10",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_super$_SensorFactoryDispatcher_$969",
-                          "typeString": "contract super SensorFactoryDispatcher"
-                        }
-                      },
-                      "id": 964,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": false,
-                      "lValueRequested": false,
-                      "memberName": "invalidateCache",
-                      "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4596,
-                      "src": "930:21:10",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
-                        "typeString": "function ()"
-                      }
-                    },
-                    "id": 965,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "kind": "functionCall",
-                    "lValueRequested": false,
-                    "names": [],
-                    "nodeType": "FunctionCall",
-                    "src": "930:23:10",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_tuple$__$",
-                      "typeString": "tuple()"
-                    }
-                  },
-                  "id": 966,
-                  "nodeType": "ExpressionStatement",
-                  "src": "930:23:10"
+                  "src": "753:24:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 968,
+            "id": 872,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -494,16 +400,16 @@
             "name": "setTarget",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 954,
+              "id": 863,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 953,
+                  "id": 862,
                   "name": "_target",
                   "nodeType": "VariableDeclaration",
-                  "scope": 968,
-                  "src": "870:15:10",
+                  "scope": 872,
+                  "src": "723:15:10",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -511,10 +417,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 952,
+                    "id": 861,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "870:7:10",
+                    "src": "723:7:10",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -524,45 +430,45 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "869:17:10"
+              "src": "722:17:10"
             },
             "payable": false,
             "returnParameters": {
-              "id": 955,
+              "id": 864,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "894:0:10"
+              "src": "747:0:10"
             },
-            "scope": 969,
-            "src": "851:107:10",
+            "scope": 873,
+            "src": "704:78:10",
             "stateMutability": "nonpayable",
-            "superFunction": 4714,
+            "superFunction": 4251,
             "visibility": "public"
           }
         ],
-        "scope": 970,
-        "src": "650:310:10"
+        "scope": 874,
+        "src": "567:217:10"
       }
     ],
-    "src": "0:961:10"
+    "src": "0:785:10"
   },
   "legacyAST": {
-    "absolutePath": "/Users/peterjanbrone/databrokerdao/databrokerdao-dapi/contracts/sensor/SensorFactoryDispatcher.sol",
+    "absolutePath": "/Users/roderik/Development/databrokerdao-dapi/contracts/sensor/SensorFactoryDispatcher.sol",
     "exportedSymbols": {
       "SensorFactoryDispatcher": [
-        969
+        873
       ]
     },
-    "id": 970,
+    "id": 874,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 929,
+        "id": 844,
         "literals": [
           "solidity",
           "^",
           "0.4",
-          ".20"
+          ".24"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:24:10"
@@ -570,10 +476,10 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/utility/upgrading/Dispatcher.sol",
         "file": "@settlemint/solidity-mint/contracts/utility/upgrading/Dispatcher.sol",
-        "id": 930,
+        "id": 845,
         "nodeType": "ImportDirective",
-        "scope": 970,
-        "sourceUnit": 4716,
+        "scope": 874,
+        "sourceUnit": 4253,
         "src": "26:78:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -581,10 +487,10 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokensystem/interfaces/IToken.sol",
         "file": "@settlemint/solidity-mint/contracts/marketplaces/tokensystem/interfaces/IToken.sol",
-        "id": 931,
+        "id": 846,
         "nodeType": "ImportDirective",
-        "scope": 970,
-        "sourceUnit": 4506,
+        "scope": 874,
+        "sourceUnit": 4156,
         "src": "105:92:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -592,10 +498,10 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListing.sol",
         "file": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListing.sol",
-        "id": 932,
+        "id": 847,
         "nodeType": "ImportDirective",
-        "scope": 970,
-        "sourceUnit": 3354,
+        "scope": 874,
+        "sourceUnit": 3088,
         "src": "198:103:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -603,10 +509,10 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListingFactory.sol",
         "file": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListingFactory.sol",
-        "id": 933,
+        "id": 848,
         "nodeType": "ImportDirective",
-        "scope": 970,
-        "sourceUnit": 3386,
+        "scope": 874,
+        "sourceUnit": 3120,
         "src": "302:110:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -614,22 +520,11 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/ChallengeRegistry.sol",
         "file": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/ChallengeRegistry.sol",
-        "id": 934,
+        "id": 849,
         "nodeType": "ImportDirective",
-        "scope": 970,
-        "sourceUnit": 2100,
+        "scope": 874,
+        "sourceUnit": 1909,
         "src": "413:101:10",
-        "symbolAliases": [],
-        "unitAlias": ""
-      },
-      {
-        "absolutePath": "@settlemint/solidity-mint/contracts/utility/caching/CachedByAddress.sol",
-        "file": "@settlemint/solidity-mint/contracts/utility/caching/CachedByAddress.sol",
-        "id": 935,
-        "nodeType": "ImportDirective",
-        "scope": 970,
-        "sourceUnit": 4598,
-        "src": "515:81:10",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -639,70 +534,48 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 936,
+              "id": 850,
               "name": "Dispatcher",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4715,
-              "src": "686:10:10",
+              "referencedDeclaration": 4252,
+              "src": "603:10:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Dispatcher_$4715",
+                "typeIdentifier": "t_contract$_Dispatcher_$4252",
                 "typeString": "contract Dispatcher"
               }
             },
-            "id": 937,
+            "id": 851,
             "nodeType": "InheritanceSpecifier",
-            "src": "686:10:10"
-          },
-          {
-            "arguments": null,
-            "baseName": {
-              "contractScope": null,
-              "id": 938,
-              "name": "CachedByAddress",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4597,
-              "src": "698:15:10",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CachedByAddress_$4597",
-                "typeString": "contract CachedByAddress"
-              }
-            },
-            "id": 939,
-            "nodeType": "InheritanceSpecifier",
-            "src": "698:15:10"
+            "src": "603:10:10"
           }
         ],
         "contractDependencies": [
-          1816,
-          4568,
-          4597,
-          4715,
-          4739
+          1683,
+          4252,
+          4287
         ],
         "contractKind": "contract",
         "documentation": "Dispatches calls to the sensor factory",
         "fullyImplemented": true,
-        "id": 969,
+        "id": 873,
         "linearizedBaseContracts": [
-          969,
-          4597,
-          4568,
-          4715,
-          4739,
-          1816
+          873,
+          4252,
+          4287,
+          1683
         ],
         "name": "SensorFactoryDispatcher",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 950,
+              "id": 859,
               "nodeType": "Block",
-              "src": "845:2:10",
+              "src": "698:2:10",
               "statements": []
             },
             "documentation": null,
-            "id": 951,
+            "id": 860,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -711,82 +584,49 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 944,
+                    "id": 856,
                     "name": "_gateKeeper",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 941,
-                    "src": "793:11:10",
+                    "referencedDeclaration": 853,
+                    "src": "683:11:10",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   }
                 ],
-                "id": 945,
+                "id": 857,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 943,
+                  "id": 855,
                   "name": "Secured",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1816,
-                  "src": "785:7:10",
+                  "referencedDeclaration": 1683,
+                  "src": "675:7:10",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Secured_$1816_$",
+                    "typeIdentifier": "t_type$_t_contract$_Secured_$1683_$",
                     "typeString": "type(contract Secured)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "785:20:10"
-              },
-              {
-                "arguments": [
-                  {
-                    "argumentTypes": null,
-                    "id": 947,
-                    "name": "this",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 4931,
-                    "src": "826:4:10",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_SensorFactoryDispatcher_$969",
-                      "typeString": "contract SensorFactoryDispatcher"
-                    }
-                  }
-                ],
-                "id": 948,
-                "modifierName": {
-                  "argumentTypes": null,
-                  "id": 946,
-                  "name": "CachedByAddress",
-                  "nodeType": "Identifier",
-                  "overloadedDeclarations": [],
-                  "referencedDeclaration": 4597,
-                  "src": "810:15:10",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_CachedByAddress_$4597_$",
-                    "typeString": "type(contract CachedByAddress)"
-                  }
-                },
-                "nodeType": "ModifierInvocation",
-                "src": "810:21:10"
+                "src": "675:20:10"
               }
             ],
-            "name": "SensorFactoryDispatcher",
+            "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 942,
+              "id": 854,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 941,
+                  "id": 853,
                   "name": "_gateKeeper",
                   "nodeType": "VariableDeclaration",
-                  "scope": 951,
-                  "src": "757:19:10",
+                  "scope": 860,
+                  "src": "636:19:10",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -794,10 +634,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 940,
+                    "id": 852,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "757:7:10",
+                    "src": "636:7:10",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -807,26 +647,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "751:29:10"
+              "src": "630:29:10"
             },
             "payable": false,
             "returnParameters": {
-              "id": 949,
+              "id": 858,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "845:0:10"
+              "src": "698:0:10"
             },
-            "scope": 969,
-            "src": "719:128:10",
+            "scope": 873,
+            "src": "619:81:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 967,
+              "id": 871,
               "nodeType": "Block",
-              "src": "894:64:10",
+              "src": "747:35:10",
               "statements": [
                 {
                   "expression": {
@@ -834,12 +674,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 959,
+                        "id": 868,
                         "name": "_target",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 953,
-                        "src": "916:7:10",
+                        "referencedDeclaration": 862,
+                        "src": "769:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -855,32 +695,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 956,
+                        "id": 865,
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4932,
-                        "src": "900:5:10",
+                        "referencedDeclaration": 4472,
+                        "src": "753:5:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_super$_SensorFactoryDispatcher_$969",
+                          "typeIdentifier": "t_super$_SensorFactoryDispatcher_$873",
                           "typeString": "contract super SensorFactoryDispatcher"
                         }
                       },
-                      "id": 958,
+                      "id": 867,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "setTarget",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4714,
-                      "src": "900:15:10",
+                      "referencedDeclaration": 4251,
+                      "src": "753:15:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 960,
+                    "id": 869,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -888,71 +728,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "900:24:10",
+                    "src": "753:24:10",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 961,
+                  "id": 870,
                   "nodeType": "ExpressionStatement",
-                  "src": "900:24:10"
-                },
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "arguments": [],
-                    "expression": {
-                      "argumentTypes": [],
-                      "expression": {
-                        "argumentTypes": null,
-                        "id": 962,
-                        "name": "super",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 4932,
-                        "src": "930:5:10",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_super$_SensorFactoryDispatcher_$969",
-                          "typeString": "contract super SensorFactoryDispatcher"
-                        }
-                      },
-                      "id": 964,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": false,
-                      "lValueRequested": false,
-                      "memberName": "invalidateCache",
-                      "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4596,
-                      "src": "930:21:10",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
-                        "typeString": "function ()"
-                      }
-                    },
-                    "id": 965,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "kind": "functionCall",
-                    "lValueRequested": false,
-                    "names": [],
-                    "nodeType": "FunctionCall",
-                    "src": "930:23:10",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_tuple$__$",
-                      "typeString": "tuple()"
-                    }
-                  },
-                  "id": 966,
-                  "nodeType": "ExpressionStatement",
-                  "src": "930:23:10"
+                  "src": "753:24:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 968,
+            "id": 872,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -960,16 +749,16 @@
             "name": "setTarget",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 954,
+              "id": 863,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 953,
+                  "id": 862,
                   "name": "_target",
                   "nodeType": "VariableDeclaration",
-                  "scope": 968,
-                  "src": "870:15:10",
+                  "scope": 872,
+                  "src": "723:15:10",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -977,10 +766,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 952,
+                    "id": 861,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "870:7:10",
+                    "src": "723:7:10",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -990,27 +779,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "869:17:10"
+              "src": "722:17:10"
             },
             "payable": false,
             "returnParameters": {
-              "id": 955,
+              "id": 864,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "894:0:10"
+              "src": "747:0:10"
             },
-            "scope": 969,
-            "src": "851:107:10",
+            "scope": 873,
+            "src": "704:78:10",
             "stateMutability": "nonpayable",
-            "superFunction": 4714,
+            "superFunction": 4251,
             "visibility": "public"
           }
         ],
-        "scope": 970,
-        "src": "650:310:10"
+        "scope": 874,
+        "src": "567:217:10"
       }
     ],
-    "src": "0:961:10"
+    "src": "0:785:10"
   },
   "compiler": {
     "name": "solc",
@@ -1018,24 +807,81 @@
   },
   "networks": {
     "1337": {
-      "events": {},
+      "events": {
+        "0x4d11d6210a5e807da812a693b5d341a870571b5fc31158172207a3d99c911ccd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "originalTarget",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "newTarget",
+              "type": "address"
+            }
+          ],
+          "name": "TargetChanged",
+          "type": "event",
+          "signature": "0x4d11d6210a5e807da812a693b5d341a870571b5fc31158172207a3d99c911ccd"
+        }
+      },
       "links": {},
-      "address": "0x3529751a8fa32349ced2d06694e12da5a0802561",
-      "transactionHash": "0xe3fcc83b178fcdce2640f456d6d450c891a11dceaa3b2b23460dee624b9273d9"
+      "address": "0x15c80af328a504d5D2dF8185941B339841E97D05",
+      "transactionHash": "0xbf4f428946f0a589c3a770257fc045d1b04f0a3061e3487358a84a34688b4542"
     },
     "8995": {
-      "events": {},
+      "events": {
+        "0x4d11d6210a5e807da812a693b5d341a870571b5fc31158172207a3d99c911ccd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "originalTarget",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "newTarget",
+              "type": "address"
+            }
+          ],
+          "name": "TargetChanged",
+          "type": "event",
+          "signature": "0x4d11d6210a5e807da812a693b5d341a870571b5fc31158172207a3d99c911ccd"
+        }
+      },
       "links": {},
-      "address": "0xfc06e3b8181626c07257b2c8eb26c05a13cc5415",
-      "transactionHash": "0x1afdfa004d7d23315289311007cc4e9861a637a140d8f16a07c586bb62b78a46"
+      "address": "0xc64fFA7DB98d7b207AEf787c31475E1802365C9A",
+      "transactionHash": "0x66a4e285b589bd6412c5720af9ed54f82e9dc179e9b1d4a93634ae07291270a3"
     },
     "8996": {
-      "events": {},
+      "events": {
+        "0x4d11d6210a5e807da812a693b5d341a870571b5fc31158172207a3d99c911ccd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "originalTarget",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "newTarget",
+              "type": "address"
+            }
+          ],
+          "name": "TargetChanged",
+          "type": "event",
+          "signature": "0x4d11d6210a5e807da812a693b5d341a870571b5fc31158172207a3d99c911ccd"
+        }
+      },
       "links": {},
-      "address": "0x06be869fa5ace240968c3bcd7802134cfa3cd071",
-      "transactionHash": "0xb4b7cb148646eacb8be79f5f8627cf904ae7343ebe5290e0b45881e452845226"
+      "address": "0x6bD4a6268D1A24DDdabf50B3E8ccf87371d6B7F4",
+      "transactionHash": "0x3eb5a0e4e274274c08c3a0f2ff692f9b8e8ec8cf7dcecbecb25785905ebfcc97"
     }
   },
-  "schemaVersion": "2.0.1",
-  "updatedAt": "2018-08-29T15:11:10.844Z"
+  "schemaVersion": "3.0.0-beta.0",
+  "updatedAt": "2018-09-03T09:08:40.560Z"
 }

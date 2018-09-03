@@ -1,7 +1,8 @@
-pragma solidity ^0.4.20;
+pragma solidity ^0.4.24;
 
 import "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/TokenCuratedRegistry.sol";
 import "@settlemint/solidity-mint/contracts/marketplaces/tokensystem/Token.sol";
+
 
 /**
  * Contains all sensors
@@ -14,7 +15,7 @@ contract SensorRegistry is TokenCuratedRegistry {
   @param _gateKeeper     Address of the gatekeeper
   @param _token          Address of the token
   */
-  function SensorRegistry(
+  constructor(
     address _gateKeeper,
     address _token,
     address _listingFactory,

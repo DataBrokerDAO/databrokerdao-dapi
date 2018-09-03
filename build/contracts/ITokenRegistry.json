@@ -16,28 +16,6 @@
       "type": "function"
     },
     {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "_cachedAddress",
-          "type": "address"
-        },
-        {
-          "name": "_cachedBytes32",
-          "type": "bytes32"
-        },
-        {
-          "name": "_cachedUint256",
-          "type": "uint256"
-        }
-      ],
-      "name": "invalidateCache",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
       "constant": true,
       "inputs": [],
       "name": "gateKeeper",
@@ -119,42 +97,6 @@
       "type": "constructor"
     },
     {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "name": "key",
-          "type": "address"
-        }
-      ],
-      "name": "AddressCacheInvalidated",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "name": "key",
-          "type": "bytes32"
-        }
-      ],
-      "name": "Bytes32CacheInvalidated",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "name": "key",
-          "type": "uint256"
-        }
-      ],
-      "name": "Uint256CacheInvalidated",
-      "type": "event"
-    },
-    {
       "constant": false,
       "inputs": [
         {
@@ -177,25 +119,25 @@
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.4.22;\n\nimport \"../../../utility/syncing/Syncable.sol\";\nimport \"../../../authentication/Secured.sol\";\nimport \"../../../utility/caching/Cacher.sol\";\nimport \"./IToken.sol\";\nimport \"../../../utility/metadata/MetaDataContainer.sol\";\n\n\ncontract ITokenRegistry is Secured, Syncable, Cacher, MetaDataContainer {\n\n  bytes32 constant public LIST_TOKEN_ROLE = \"LIST_TOKEN_ROLE\";\n\n  mapping(bytes32 => IToken) internal tokens;\n  bytes32[] internal tokenIndex;\n\n  constructor(address _gateKeeper) Secured(_gateKeeper) public {}\n\n  function addToken(bytes32 _name, address _token) public;\n}\n",
+  "source": "pragma solidity ^0.4.24;\n\nimport \"../../../utility/syncing/Syncable.sol\";\nimport \"../../../authentication/Secured.sol\";\nimport \"./IToken.sol\";\nimport \"../../../utility/metadata/MetaDataContainer.sol\";\n\n\ncontract ITokenRegistry is Secured, Syncable, MetaDataContainer {\n\n  bytes32 constant public LIST_TOKEN_ROLE = \"LIST_TOKEN_ROLE\";\n\n  mapping(bytes32 => IToken) internal tokens;\n  bytes32[] internal tokenIndex;\n\n  constructor(address _gateKeeper) Secured(_gateKeeper) public {}\n\n  function addToken(bytes32 _name, address _token) public;\n}\n",
   "sourcePath": "@settlemint/solidity-mint/contracts/marketplaces/tokensystem/interfaces/ITokenRegistry.sol",
   "ast": {
     "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokensystem/interfaces/ITokenRegistry.sol",
     "exportedSymbols": {
       "ITokenRegistry": [
-        4547
+        4194
       ]
     },
-    "id": 4548,
+    "id": 4195,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4507,
+        "id": 4157,
         "literals": [
           "solidity",
           "^",
           "0.4",
-          ".22"
+          ".24"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:24:29"
@@ -203,10 +145,10 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/utility/syncing/Syncable.sol",
         "file": "../../../utility/syncing/Syncable.sol",
-        "id": 4508,
+        "id": 4158,
         "nodeType": "ImportDirective",
-        "scope": 4548,
-        "sourceUnit": 4688,
+        "scope": 4195,
+        "sourceUnit": 4224,
         "src": "26:47:29",
         "symbolAliases": [],
         "unitAlias": ""
@@ -214,44 +156,33 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/authentication/Secured.sol",
         "file": "../../../authentication/Secured.sol",
-        "id": 4509,
+        "id": 4159,
         "nodeType": "ImportDirective",
-        "scope": 4548,
-        "sourceUnit": 1817,
+        "scope": 4195,
+        "sourceUnit": 1684,
         "src": "74:45:29",
-        "symbolAliases": [],
-        "unitAlias": ""
-      },
-      {
-        "absolutePath": "@settlemint/solidity-mint/contracts/utility/caching/Cacher.sol",
-        "file": "../../../utility/caching/Cacher.sol",
-        "id": 4510,
-        "nodeType": "ImportDirective",
-        "scope": 4548,
-        "sourceUnit": 4659,
-        "src": "120:45:29",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokensystem/interfaces/IToken.sol",
         "file": "./IToken.sol",
-        "id": 4511,
+        "id": 4160,
         "nodeType": "ImportDirective",
-        "scope": 4548,
-        "sourceUnit": 4506,
-        "src": "166:22:29",
+        "scope": 4195,
+        "sourceUnit": 4156,
+        "src": "120:22:29",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/utility/metadata/MetaDataContainer.sol",
         "file": "../../../utility/metadata/MetaDataContainer.sol",
-        "id": 4512,
+        "id": 4161,
         "nodeType": "ImportDirective",
-        "scope": 4548,
-        "sourceUnit": 4680,
-        "src": "189:57:29",
+        "scope": 4195,
+        "sourceUnit": 4216,
+        "src": "143:57:29",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -261,102 +192,82 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 4513,
+              "id": 4162,
               "name": "Secured",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1816,
-              "src": "276:7:29",
+              "referencedDeclaration": 1683,
+              "src": "230:7:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Secured_$1816",
+                "typeIdentifier": "t_contract$_Secured_$1683",
                 "typeString": "contract Secured"
               }
             },
-            "id": 4514,
+            "id": 4163,
             "nodeType": "InheritanceSpecifier",
-            "src": "276:7:29"
+            "src": "230:7:29"
           },
           {
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 4515,
+              "id": 4164,
               "name": "Syncable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4687,
-              "src": "285:8:29",
+              "referencedDeclaration": 4223,
+              "src": "239:8:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Syncable_$4687",
+                "typeIdentifier": "t_contract$_Syncable_$4223",
                 "typeString": "contract Syncable"
               }
             },
-            "id": 4516,
+            "id": 4165,
             "nodeType": "InheritanceSpecifier",
-            "src": "285:8:29"
+            "src": "239:8:29"
           },
           {
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 4517,
-              "name": "Cacher",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4658,
-              "src": "295:6:29",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Cacher_$4658",
-                "typeString": "contract Cacher"
-              }
-            },
-            "id": 4518,
-            "nodeType": "InheritanceSpecifier",
-            "src": "295:6:29"
-          },
-          {
-            "arguments": null,
-            "baseName": {
-              "contractScope": null,
-              "id": 4519,
+              "id": 4166,
               "name": "MetaDataContainer",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4679,
-              "src": "303:17:29",
+              "referencedDeclaration": 4215,
+              "src": "249:17:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_MetaDataContainer_$4679",
+                "typeIdentifier": "t_contract$_MetaDataContainer_$4215",
                 "typeString": "contract MetaDataContainer"
               }
             },
-            "id": 4520,
+            "id": 4167,
             "nodeType": "InheritanceSpecifier",
-            "src": "303:17:29"
+            "src": "249:17:29"
           }
         ],
         "contractDependencies": [
-          1816,
-          4658,
-          4679,
-          4687
+          1683,
+          4215,
+          4223
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 4547,
+        "id": 4194,
         "linearizedBaseContracts": [
-          4547,
-          4679,
-          4658,
-          4687,
-          1816
+          4194,
+          4215,
+          4223,
+          1683
         ],
         "name": "ITokenRegistry",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 4523,
+            "id": 4170,
             "name": "LIST_TOKEN_ROLE",
             "nodeType": "VariableDeclaration",
-            "scope": 4547,
-            "src": "326:59:29",
+            "scope": 4194,
+            "src": "272:59:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -364,10 +275,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 4521,
+              "id": 4168,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "326:7:29",
+              "src": "272:7:29",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -376,14 +287,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "4c4953545f544f4b454e5f524f4c45",
-              "id": 4522,
+              "id": 4169,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "368:17:29",
+              "src": "314:17:29",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_3fdf5299f16fe12a87559e9b4907f7062e4e08c3f7a43de43f75e8ec03a315d3",
@@ -395,44 +306,44 @@
           },
           {
             "constant": false,
-            "id": 4527,
+            "id": 4174,
             "name": "tokens",
             "nodeType": "VariableDeclaration",
-            "scope": 4547,
-            "src": "390:42:29",
+            "scope": 4194,
+            "src": "336:42:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_IToken_$4505_$",
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_IToken_$4155_$",
               "typeString": "mapping(bytes32 => contract IToken)"
             },
             "typeName": {
-              "id": 4526,
+              "id": 4173,
               "keyType": {
-                "id": 4524,
+                "id": 4171,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "398:7:29",
+                "src": "344:7:29",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "390:26:29",
+              "src": "336:26:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_IToken_$4505_$",
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_IToken_$4155_$",
                 "typeString": "mapping(bytes32 => contract IToken)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 4525,
+                "id": 4172,
                 "name": "IToken",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 4505,
-                "src": "409:6:29",
+                "referencedDeclaration": 4155,
+                "src": "355:6:29",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_contract$_IToken_$4505",
+                  "typeIdentifier": "t_contract$_IToken_$4155",
                   "typeString": "contract IToken"
                 }
               }
@@ -442,11 +353,11 @@
           },
           {
             "constant": false,
-            "id": 4530,
+            "id": 4177,
             "name": "tokenIndex",
             "nodeType": "VariableDeclaration",
-            "scope": 4547,
-            "src": "436:29:29",
+            "scope": 4194,
+            "src": "382:29:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -455,19 +366,19 @@
             },
             "typeName": {
               "baseType": {
-                "id": 4528,
+                "id": 4175,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "436:7:29",
+                "src": "382:7:29",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
-              "id": 4529,
+              "id": 4176,
               "length": null,
               "nodeType": "ArrayTypeName",
-              "src": "436:9:29",
+              "src": "382:9:29",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                 "typeString": "bytes32[]"
@@ -478,13 +389,13 @@
           },
           {
             "body": {
-              "id": 4538,
+              "id": 4185,
               "nodeType": "Block",
-              "src": "531:2:29",
+              "src": "477:2:29",
               "statements": []
             },
             "documentation": null,
-            "id": 4539,
+            "id": 4186,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -493,49 +404,49 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 4535,
+                    "id": 4182,
                     "name": "_gateKeeper",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 4532,
-                    "src": "511:11:29",
+                    "referencedDeclaration": 4179,
+                    "src": "457:11:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   }
                 ],
-                "id": 4536,
+                "id": 4183,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 4534,
+                  "id": 4181,
                   "name": "Secured",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1816,
-                  "src": "503:7:29",
+                  "referencedDeclaration": 1683,
+                  "src": "449:7:29",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Secured_$1816_$",
+                    "typeIdentifier": "t_type$_t_contract$_Secured_$1683_$",
                     "typeString": "type(contract Secured)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "503:20:29"
+                "src": "449:20:29"
               }
             ],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4533,
+              "id": 4180,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4532,
+                  "id": 4179,
                   "name": "_gateKeeper",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4539,
-                  "src": "482:19:29",
+                  "scope": 4186,
+                  "src": "428:19:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -543,10 +454,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4531,
+                    "id": 4178,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "482:7:29",
+                    "src": "428:7:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -556,17 +467,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "481:21:29"
+              "src": "427:21:29"
             },
             "payable": false,
             "returnParameters": {
-              "id": 4537,
+              "id": 4184,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "531:0:29"
+              "src": "477:0:29"
             },
-            "scope": 4547,
-            "src": "470:63:29",
+            "scope": 4194,
+            "src": "416:63:29",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -574,7 +485,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 4546,
+            "id": 4193,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -582,16 +493,16 @@
             "name": "addToken",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4544,
+              "id": 4191,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4541,
+                  "id": 4188,
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4546,
-                  "src": "555:13:29",
+                  "scope": 4193,
+                  "src": "501:13:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -599,10 +510,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 4540,
+                    "id": 4187,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "555:7:29",
+                    "src": "501:7:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -613,11 +524,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 4543,
+                  "id": 4190,
                   "name": "_token",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4546,
-                  "src": "570:14:29",
+                  "scope": 4193,
+                  "src": "516:14:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -625,10 +536,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4542,
+                    "id": 4189,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "570:7:29",
+                    "src": "516:7:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -638,45 +549,45 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "554:31:29"
+              "src": "500:31:29"
             },
             "payable": false,
             "returnParameters": {
-              "id": 4545,
+              "id": 4192,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "592:0:29"
+              "src": "538:0:29"
             },
-            "scope": 4547,
-            "src": "537:56:29",
+            "scope": 4194,
+            "src": "483:56:29",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 4548,
-        "src": "249:346:29"
+        "scope": 4195,
+        "src": "203:338:29"
       }
     ],
-    "src": "0:596:29"
+    "src": "0:542:29"
   },
   "legacyAST": {
     "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokensystem/interfaces/ITokenRegistry.sol",
     "exportedSymbols": {
       "ITokenRegistry": [
-        4547
+        4194
       ]
     },
-    "id": 4548,
+    "id": 4195,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4507,
+        "id": 4157,
         "literals": [
           "solidity",
           "^",
           "0.4",
-          ".22"
+          ".24"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:24:29"
@@ -684,10 +595,10 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/utility/syncing/Syncable.sol",
         "file": "../../../utility/syncing/Syncable.sol",
-        "id": 4508,
+        "id": 4158,
         "nodeType": "ImportDirective",
-        "scope": 4548,
-        "sourceUnit": 4688,
+        "scope": 4195,
+        "sourceUnit": 4224,
         "src": "26:47:29",
         "symbolAliases": [],
         "unitAlias": ""
@@ -695,44 +606,33 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/authentication/Secured.sol",
         "file": "../../../authentication/Secured.sol",
-        "id": 4509,
+        "id": 4159,
         "nodeType": "ImportDirective",
-        "scope": 4548,
-        "sourceUnit": 1817,
+        "scope": 4195,
+        "sourceUnit": 1684,
         "src": "74:45:29",
-        "symbolAliases": [],
-        "unitAlias": ""
-      },
-      {
-        "absolutePath": "@settlemint/solidity-mint/contracts/utility/caching/Cacher.sol",
-        "file": "../../../utility/caching/Cacher.sol",
-        "id": 4510,
-        "nodeType": "ImportDirective",
-        "scope": 4548,
-        "sourceUnit": 4659,
-        "src": "120:45:29",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokensystem/interfaces/IToken.sol",
         "file": "./IToken.sol",
-        "id": 4511,
+        "id": 4160,
         "nodeType": "ImportDirective",
-        "scope": 4548,
-        "sourceUnit": 4506,
-        "src": "166:22:29",
+        "scope": 4195,
+        "sourceUnit": 4156,
+        "src": "120:22:29",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/utility/metadata/MetaDataContainer.sol",
         "file": "../../../utility/metadata/MetaDataContainer.sol",
-        "id": 4512,
+        "id": 4161,
         "nodeType": "ImportDirective",
-        "scope": 4548,
-        "sourceUnit": 4680,
-        "src": "189:57:29",
+        "scope": 4195,
+        "sourceUnit": 4216,
+        "src": "143:57:29",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -742,102 +642,82 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 4513,
+              "id": 4162,
               "name": "Secured",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1816,
-              "src": "276:7:29",
+              "referencedDeclaration": 1683,
+              "src": "230:7:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Secured_$1816",
+                "typeIdentifier": "t_contract$_Secured_$1683",
                 "typeString": "contract Secured"
               }
             },
-            "id": 4514,
+            "id": 4163,
             "nodeType": "InheritanceSpecifier",
-            "src": "276:7:29"
+            "src": "230:7:29"
           },
           {
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 4515,
+              "id": 4164,
               "name": "Syncable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4687,
-              "src": "285:8:29",
+              "referencedDeclaration": 4223,
+              "src": "239:8:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Syncable_$4687",
+                "typeIdentifier": "t_contract$_Syncable_$4223",
                 "typeString": "contract Syncable"
               }
             },
-            "id": 4516,
+            "id": 4165,
             "nodeType": "InheritanceSpecifier",
-            "src": "285:8:29"
+            "src": "239:8:29"
           },
           {
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 4517,
-              "name": "Cacher",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4658,
-              "src": "295:6:29",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Cacher_$4658",
-                "typeString": "contract Cacher"
-              }
-            },
-            "id": 4518,
-            "nodeType": "InheritanceSpecifier",
-            "src": "295:6:29"
-          },
-          {
-            "arguments": null,
-            "baseName": {
-              "contractScope": null,
-              "id": 4519,
+              "id": 4166,
               "name": "MetaDataContainer",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4679,
-              "src": "303:17:29",
+              "referencedDeclaration": 4215,
+              "src": "249:17:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_MetaDataContainer_$4679",
+                "typeIdentifier": "t_contract$_MetaDataContainer_$4215",
                 "typeString": "contract MetaDataContainer"
               }
             },
-            "id": 4520,
+            "id": 4167,
             "nodeType": "InheritanceSpecifier",
-            "src": "303:17:29"
+            "src": "249:17:29"
           }
         ],
         "contractDependencies": [
-          1816,
-          4658,
-          4679,
-          4687
+          1683,
+          4215,
+          4223
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 4547,
+        "id": 4194,
         "linearizedBaseContracts": [
-          4547,
-          4679,
-          4658,
-          4687,
-          1816
+          4194,
+          4215,
+          4223,
+          1683
         ],
         "name": "ITokenRegistry",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 4523,
+            "id": 4170,
             "name": "LIST_TOKEN_ROLE",
             "nodeType": "VariableDeclaration",
-            "scope": 4547,
-            "src": "326:59:29",
+            "scope": 4194,
+            "src": "272:59:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -845,10 +725,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 4521,
+              "id": 4168,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "326:7:29",
+              "src": "272:7:29",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -857,14 +737,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "4c4953545f544f4b454e5f524f4c45",
-              "id": 4522,
+              "id": 4169,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "368:17:29",
+              "src": "314:17:29",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_3fdf5299f16fe12a87559e9b4907f7062e4e08c3f7a43de43f75e8ec03a315d3",
@@ -876,44 +756,44 @@
           },
           {
             "constant": false,
-            "id": 4527,
+            "id": 4174,
             "name": "tokens",
             "nodeType": "VariableDeclaration",
-            "scope": 4547,
-            "src": "390:42:29",
+            "scope": 4194,
+            "src": "336:42:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_IToken_$4505_$",
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_IToken_$4155_$",
               "typeString": "mapping(bytes32 => contract IToken)"
             },
             "typeName": {
-              "id": 4526,
+              "id": 4173,
               "keyType": {
-                "id": 4524,
+                "id": 4171,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "398:7:29",
+                "src": "344:7:29",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "390:26:29",
+              "src": "336:26:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_IToken_$4505_$",
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_IToken_$4155_$",
                 "typeString": "mapping(bytes32 => contract IToken)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 4525,
+                "id": 4172,
                 "name": "IToken",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 4505,
-                "src": "409:6:29",
+                "referencedDeclaration": 4155,
+                "src": "355:6:29",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_contract$_IToken_$4505",
+                  "typeIdentifier": "t_contract$_IToken_$4155",
                   "typeString": "contract IToken"
                 }
               }
@@ -923,11 +803,11 @@
           },
           {
             "constant": false,
-            "id": 4530,
+            "id": 4177,
             "name": "tokenIndex",
             "nodeType": "VariableDeclaration",
-            "scope": 4547,
-            "src": "436:29:29",
+            "scope": 4194,
+            "src": "382:29:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -936,19 +816,19 @@
             },
             "typeName": {
               "baseType": {
-                "id": 4528,
+                "id": 4175,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "436:7:29",
+                "src": "382:7:29",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
-              "id": 4529,
+              "id": 4176,
               "length": null,
               "nodeType": "ArrayTypeName",
-              "src": "436:9:29",
+              "src": "382:9:29",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                 "typeString": "bytes32[]"
@@ -959,13 +839,13 @@
           },
           {
             "body": {
-              "id": 4538,
+              "id": 4185,
               "nodeType": "Block",
-              "src": "531:2:29",
+              "src": "477:2:29",
               "statements": []
             },
             "documentation": null,
-            "id": 4539,
+            "id": 4186,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -974,49 +854,49 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 4535,
+                    "id": 4182,
                     "name": "_gateKeeper",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 4532,
-                    "src": "511:11:29",
+                    "referencedDeclaration": 4179,
+                    "src": "457:11:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   }
                 ],
-                "id": 4536,
+                "id": 4183,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 4534,
+                  "id": 4181,
                   "name": "Secured",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1816,
-                  "src": "503:7:29",
+                  "referencedDeclaration": 1683,
+                  "src": "449:7:29",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Secured_$1816_$",
+                    "typeIdentifier": "t_type$_t_contract$_Secured_$1683_$",
                     "typeString": "type(contract Secured)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "503:20:29"
+                "src": "449:20:29"
               }
             ],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4533,
+              "id": 4180,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4532,
+                  "id": 4179,
                   "name": "_gateKeeper",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4539,
-                  "src": "482:19:29",
+                  "scope": 4186,
+                  "src": "428:19:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1024,10 +904,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4531,
+                    "id": 4178,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "482:7:29",
+                    "src": "428:7:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1037,17 +917,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "481:21:29"
+              "src": "427:21:29"
             },
             "payable": false,
             "returnParameters": {
-              "id": 4537,
+              "id": 4184,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "531:0:29"
+              "src": "477:0:29"
             },
-            "scope": 4547,
-            "src": "470:63:29",
+            "scope": 4194,
+            "src": "416:63:29",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -1055,7 +935,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 4546,
+            "id": 4193,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1063,16 +943,16 @@
             "name": "addToken",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4544,
+              "id": 4191,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4541,
+                  "id": 4188,
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4546,
-                  "src": "555:13:29",
+                  "scope": 4193,
+                  "src": "501:13:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1080,10 +960,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 4540,
+                    "id": 4187,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "555:7:29",
+                    "src": "501:7:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1094,11 +974,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 4543,
+                  "id": 4190,
                   "name": "_token",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4546,
-                  "src": "570:14:29",
+                  "scope": 4193,
+                  "src": "516:14:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1106,10 +986,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4542,
+                    "id": 4189,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "570:7:29",
+                    "src": "516:7:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1119,33 +999,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "554:31:29"
+              "src": "500:31:29"
             },
             "payable": false,
             "returnParameters": {
-              "id": 4545,
+              "id": 4192,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "592:0:29"
+              "src": "538:0:29"
             },
-            "scope": 4547,
-            "src": "537:56:29",
+            "scope": 4194,
+            "src": "483:56:29",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 4548,
-        "src": "249:346:29"
+        "scope": 4195,
+        "src": "203:338:29"
       }
     ],
-    "src": "0:596:29"
+    "src": "0:542:29"
   },
   "compiler": {
     "name": "solc",
     "version": "0.4.24+commit.e67f0147.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "2.0.1",
-  "updatedAt": "2018-07-09T07:48:29.978Z"
+  "schemaVersion": "3.0.0-beta.0",
+  "updatedAt": "2018-09-03T08:50:22.805Z"
 }

@@ -1,15 +1,14 @@
-pragma solidity ^0.4.20;
+pragma solidity ^0.4.24;
 
 import "@settlemint/solidity-mint/contracts/authentication/Secured.sol";
 import "@settlemint/solidity-mint/contracts/utility/syncing/Syncable.sol";
-import "@settlemint/solidity-mint/contracts/utility/caching/Cacher.sol";
-import "@settlemint/solidity-mint/contracts/utility/caching/CachedByAddress.sol";
 import "@settlemint/solidity-mint/contracts/utility/metadata/MetaDataContainer.sol";
+
 
 /**
  * Contains one sensor purchase entity
  */
-contract Purchase is Secured, Cacher, CachedByAddress, MetaDataContainer {
+contract Purchase is Secured, MetaDataContainer {
 
   uint public price; // price per second for which access was purchased
   uint public startTime; // the time at which the purchaser will gain access to this sensor
@@ -17,7 +16,7 @@ contract Purchase is Secured, Cacher, CachedByAddress, MetaDataContainer {
   address public purchaser; // address of the user
   address public sensor; // id of the sensor to which access was purchased
 
-  function Purchase(
+  constructor(
     uint _price,
     uint _startTime,
     uint _endTime,
@@ -27,7 +26,6 @@ contract Purchase is Secured, Cacher, CachedByAddress, MetaDataContainer {
   )
     public
     Secured(_gateKeeper)
-    CachedByAddress(this)
   {
     price = _price;
     startTime = _startTime;
@@ -37,17 +35,9 @@ contract Purchase is Secured, Cacher, CachedByAddress, MetaDataContainer {
   }
 
   /**
-  * implementation of cacher methods
-  */
-  function invalidateCache(address _cachedAddress, bytes32 /*_cachedBytes32*/, uint256 /*_cachedUint256*/) public {
-    emit AddressCacheInvalidated(_cachedAddress);
-  }
-
-  /**
   * implementation of metadata methods
   */
   function updateMetaData(string ipfsHash) public {
     super.updateMetaData(ipfsHash);
-    super.invalidateCache();
   }
 }

@@ -1,4 +1,4 @@
-pragma solidity ^0.4.20;
+pragma solidity ^0.4.24;
 
 import "../dtxtoken/DtxToken.sol";
 import "@settlemint/solidity-mint/contracts/authentication/Secured.sol";
@@ -21,12 +21,12 @@ contract DtxMinter is Secured, Upgradeable {
   @param _token          Address of the token
   @param _gateKeeper     Address of the gatekeeper
   */
-  function DtxMinter(
+  constructor(
     address _token,
     address _gateKeeper
   )
-    Secured(_gateKeeper)
     public
+    Secured(_gateKeeper)
   {
     token = DtxToken(_token);
   }

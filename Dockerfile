@@ -1,3 +1,6 @@
-FROM settlemint/mint-dapi
+FROM alpine
 
-COPY . /srv/src/contracts
+RUN mkdir -p /srv/project
+COPY ./build /srv/project/build
+COPY ./README.md /srv/project/README.md
+COPY ./*.png /srv/project/

@@ -89,25 +89,25 @@
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.4.22;\n\n\n/**\n * @title RoleRegistry\n * @dev The RoleRegistry contract defines the methods and data structures to\n * record if addresses have certain roles or not.\n */\ncontract IRoleRegistry {\n\n  event Designated(address _address);\n  event Discharged(address _address);\n  event RoleRegistryCreated(address _address);\n\n\n  /**\n   * @dev Checks if an address has a certain role\n   * @param _address The address to check for the role.\n   * @return A boolean that is True if the address has the role.\n   */\n  function hasRole(address _address) public view returns (bool hasTheRole);\n\n  /**\n   * @dev Gives the role to an address\n   * @param _address The address to designate the role to.\n   */\n  function designate(address _address) public;\n\n  /**\n   * @dev Removes the role from an address\n   * @param _address The address to discharge fromn the role.\n   */\n  function discharge(address _address) public;\n\n}\n",
+  "source": "pragma solidity ^0.4.24;\n\n\n/**\n * @title RoleRegistry\n * @dev The RoleRegistry contract defines the methods and data structures to\n * record if addresses have certain roles or not.\n */\ncontract IRoleRegistry {\n\n  event Designated(address _address);\n  event Discharged(address _address);\n  event RoleRegistryCreated(address _address);\n\n\n  /**\n   * @dev Checks if an address has a certain role\n   * @param _address The address to check for the role.\n   * @return A boolean that is True if the address has the role.\n   */\n  function hasRole(address _address) public view returns (bool hasTheRole);\n\n  /**\n   * @dev Gives the role to an address\n   * @param _address The address to designate the role to.\n   */\n  function designate(address _address) public;\n\n  /**\n   * @dev Removes the role from an address\n   * @param _address The address to discharge fromn the role.\n   */\n  function discharge(address _address) public;\n\n}\n",
   "sourcePath": "@settlemint/solidity-mint/contracts/authentication/interfaces/IRoleRegistry.sol",
   "ast": {
     "absolutePath": "@settlemint/solidity-mint/contracts/authentication/interfaces/IRoleRegistry.sol",
     "exportedSymbols": {
       "IRoleRegistry": [
-        1848
+        1715
       ]
     },
-    "id": 1849,
+    "id": 1716,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1818,
+        "id": 1685,
         "literals": [
           "solidity",
           "^",
           "0.4",
-          ".22"
+          ".24"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:24:18"
@@ -118,9 +118,9 @@
         "contractKind": "contract",
         "documentation": "@title RoleRegistry\n@dev The RoleRegistry contract defines the methods and data structures to\nrecord if addresses have certain roles or not.",
         "fullyImplemented": false,
-        "id": 1848,
+        "id": 1715,
         "linearizedBaseContracts": [
-          1848
+          1715
         ],
         "name": "IRoleRegistry",
         "nodeType": "ContractDefinition",
@@ -128,20 +128,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1822,
+            "id": 1689,
             "name": "Designated",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1821,
+              "id": 1688,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1820,
+                  "id": 1687,
                   "indexed": false,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1822,
+                  "scope": 1689,
                   "src": "230:16:18",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -150,7 +150,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1819,
+                    "id": 1686,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "230:7:18",
@@ -170,20 +170,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1826,
+            "id": 1693,
             "name": "Discharged",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1825,
+              "id": 1692,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1824,
+                  "id": 1691,
                   "indexed": false,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1826,
+                  "scope": 1693,
                   "src": "268:16:18",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -192,7 +192,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1823,
+                    "id": 1690,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "268:7:18",
@@ -212,20 +212,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1830,
+            "id": 1697,
             "name": "RoleRegistryCreated",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1829,
+              "id": 1696,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1828,
+                  "id": 1695,
                   "indexed": false,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1830,
+                  "scope": 1697,
                   "src": "315:16:18",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -234,7 +234,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1827,
+                    "id": 1694,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "315:7:18",
@@ -254,7 +254,7 @@
           {
             "body": null,
             "documentation": "@dev Checks if an address has a certain role\n@param _address The address to check for the role.\n@return A boolean that is True if the address has the role.",
-            "id": 1837,
+            "id": 1704,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -262,15 +262,15 @@
             "name": "hasRole",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1833,
+              "id": 1700,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1832,
+                  "id": 1699,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1837,
+                  "scope": 1704,
                   "src": "538:16:18",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -279,7 +279,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1831,
+                    "id": 1698,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "538:7:18",
@@ -296,15 +296,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 1836,
+              "id": 1703,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1835,
+                  "id": 1702,
                   "name": "hasTheRole",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1837,
+                  "scope": 1704,
                   "src": "577:15:18",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -313,7 +313,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1834,
+                    "id": 1701,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "577:4:18",
@@ -328,7 +328,7 @@
               ],
               "src": "576:17:18"
             },
-            "scope": 1848,
+            "scope": 1715,
             "src": "521:73:18",
             "stateMutability": "view",
             "superFunction": null,
@@ -337,7 +337,7 @@
           {
             "body": null,
             "documentation": "@dev Gives the role to an address\n@param _address The address to designate the role to.",
-            "id": 1842,
+            "id": 1709,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -345,15 +345,15 @@
             "name": "designate",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1840,
+              "id": 1707,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1839,
+                  "id": 1706,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1842,
+                  "scope": 1709,
                   "src": "727:16:18",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -362,7 +362,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1838,
+                    "id": 1705,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "727:7:18",
@@ -379,12 +379,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 1841,
+              "id": 1708,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "751:0:18"
             },
-            "scope": 1848,
+            "scope": 1715,
             "src": "708:44:18",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -393,7 +393,7 @@
           {
             "body": null,
             "documentation": "@dev Removes the role from an address\n@param _address The address to discharge fromn the role.",
-            "id": 1847,
+            "id": 1714,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -401,15 +401,15 @@
             "name": "discharge",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1845,
+              "id": 1712,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1844,
+                  "id": 1711,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1847,
+                  "scope": 1714,
                   "src": "892:16:18",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -418,7 +418,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1843,
+                    "id": 1710,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "892:7:18",
@@ -435,19 +435,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 1846,
+              "id": 1713,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "916:0:18"
             },
-            "scope": 1848,
+            "scope": 1715,
             "src": "873:44:18",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 1849,
+        "scope": 1716,
         "src": "185:735:18"
       }
     ],
@@ -457,19 +457,19 @@
     "absolutePath": "@settlemint/solidity-mint/contracts/authentication/interfaces/IRoleRegistry.sol",
     "exportedSymbols": {
       "IRoleRegistry": [
-        1848
+        1715
       ]
     },
-    "id": 1849,
+    "id": 1716,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1818,
+        "id": 1685,
         "literals": [
           "solidity",
           "^",
           "0.4",
-          ".22"
+          ".24"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:24:18"
@@ -480,9 +480,9 @@
         "contractKind": "contract",
         "documentation": "@title RoleRegistry\n@dev The RoleRegistry contract defines the methods and data structures to\nrecord if addresses have certain roles or not.",
         "fullyImplemented": false,
-        "id": 1848,
+        "id": 1715,
         "linearizedBaseContracts": [
-          1848
+          1715
         ],
         "name": "IRoleRegistry",
         "nodeType": "ContractDefinition",
@@ -490,20 +490,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1822,
+            "id": 1689,
             "name": "Designated",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1821,
+              "id": 1688,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1820,
+                  "id": 1687,
                   "indexed": false,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1822,
+                  "scope": 1689,
                   "src": "230:16:18",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -512,7 +512,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1819,
+                    "id": 1686,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "230:7:18",
@@ -532,20 +532,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1826,
+            "id": 1693,
             "name": "Discharged",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1825,
+              "id": 1692,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1824,
+                  "id": 1691,
                   "indexed": false,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1826,
+                  "scope": 1693,
                   "src": "268:16:18",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -554,7 +554,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1823,
+                    "id": 1690,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "268:7:18",
@@ -574,20 +574,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1830,
+            "id": 1697,
             "name": "RoleRegistryCreated",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1829,
+              "id": 1696,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1828,
+                  "id": 1695,
                   "indexed": false,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1830,
+                  "scope": 1697,
                   "src": "315:16:18",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -596,7 +596,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1827,
+                    "id": 1694,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "315:7:18",
@@ -616,7 +616,7 @@
           {
             "body": null,
             "documentation": "@dev Checks if an address has a certain role\n@param _address The address to check for the role.\n@return A boolean that is True if the address has the role.",
-            "id": 1837,
+            "id": 1704,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -624,15 +624,15 @@
             "name": "hasRole",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1833,
+              "id": 1700,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1832,
+                  "id": 1699,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1837,
+                  "scope": 1704,
                   "src": "538:16:18",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -641,7 +641,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1831,
+                    "id": 1698,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "538:7:18",
@@ -658,15 +658,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 1836,
+              "id": 1703,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1835,
+                  "id": 1702,
                   "name": "hasTheRole",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1837,
+                  "scope": 1704,
                   "src": "577:15:18",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -675,7 +675,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1834,
+                    "id": 1701,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "577:4:18",
@@ -690,7 +690,7 @@
               ],
               "src": "576:17:18"
             },
-            "scope": 1848,
+            "scope": 1715,
             "src": "521:73:18",
             "stateMutability": "view",
             "superFunction": null,
@@ -699,7 +699,7 @@
           {
             "body": null,
             "documentation": "@dev Gives the role to an address\n@param _address The address to designate the role to.",
-            "id": 1842,
+            "id": 1709,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -707,15 +707,15 @@
             "name": "designate",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1840,
+              "id": 1707,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1839,
+                  "id": 1706,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1842,
+                  "scope": 1709,
                   "src": "727:16:18",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -724,7 +724,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1838,
+                    "id": 1705,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "727:7:18",
@@ -741,12 +741,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 1841,
+              "id": 1708,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "751:0:18"
             },
-            "scope": 1848,
+            "scope": 1715,
             "src": "708:44:18",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -755,7 +755,7 @@
           {
             "body": null,
             "documentation": "@dev Removes the role from an address\n@param _address The address to discharge fromn the role.",
-            "id": 1847,
+            "id": 1714,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -763,15 +763,15 @@
             "name": "discharge",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1845,
+              "id": 1712,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1844,
+                  "id": 1711,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1847,
+                  "scope": 1714,
                   "src": "892:16:18",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -780,7 +780,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1843,
+                    "id": 1710,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "892:7:18",
@@ -797,19 +797,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 1846,
+              "id": 1713,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "916:0:18"
             },
-            "scope": 1848,
+            "scope": 1715,
             "src": "873:44:18",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 1849,
+        "scope": 1716,
         "src": "185:735:18"
       }
     ],
@@ -820,6 +820,6 @@
     "version": "0.4.24+commit.e67f0147.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "2.0.0",
-  "updatedAt": "2018-06-28T14:51:21.897Z"
+  "schemaVersion": "3.0.0-beta.0",
+  "updatedAt": "2018-09-03T08:50:22.796Z"
 }

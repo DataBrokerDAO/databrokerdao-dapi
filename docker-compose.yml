@@ -1,23 +1,6 @@
 version: '3'
 
 services:
-  mint:
-    image: settlemint/mint-dapi:latest
-    ports:
-      - "3333:3333"
-      # Port for remote debugging, IF enabled via REMOTE_DEBUG_MODE
-      - "9230:9230"
-    volumes:
-     - .:/srv/src/contracts
-    environment:
-      ETHEREUM_NODE_URL: http://testrpc:8545
-      MONGODB_URI: mongodb://mongo:27017/mint
-      REMOTE_DEBUG_MODE: debug
-      DEBUG: lib-ethereum:*
-    links:
-      - mongo
-      - testrpc
-
   mongo:
     image: mongo
     ports:
@@ -27,11 +10,42 @@ services:
     image: mongo-express
     ports:
       - "8082:8081"
+    depends_on:
+      - mongo
     links:
       - mongo
 
-  testrpc:
+  rabbit:
+    image: "rabbitmq:3-management-alpine"
+    hostname: "rabbit"
+    environment:
+      RABBITMQ_DEFAULT_USER: "rabbitmq"
+      RABBITMQ_DEFAULT_PASS: "rabbitmq"
+      RABBITMQ_DEFAULT_VHOST: "/"
+      RABBITMQ_VM_MEMORY_HIGH_WATERMARK: 0.9
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+
+  ethereum:
     image: trufflesuite/ganache-cli
     ports:
       - "8545:8545"
-    command: ["node", "./build/cli.node.js", "--secure", "-u" ,"0","--gasPrice", "0", "-l", "0xfffffffffff", "-h", "0.0.0.0", "-i", "1337", "-m", 'robot robot robot robot robot robot robot robot robot robot robot robot']
+    command: ["node", "./build/cli.node.js", "--secure", "-u" ,"0","--gasPrice", "0", "-l", "0xfffffffffff", "-i", "1337", "-m", 'robot robot robot robot robot robot robot robot robot robot robot robot']
+
+  mint:
+    image: settlemint/mint:master
+    ports:
+      - "3333:3333"
+    volumes:
+     - .:/srv/project
+    environment:
+      ETHEREUM_NODE_URL: http://ethereum:8545
+    depends_on:
+      - mongo
+      - ethereum
+      - rabbit
+    links:
+      - mongo
+      - ethereum
+      - rabbit

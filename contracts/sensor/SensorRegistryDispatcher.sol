@@ -1,17 +1,16 @@
-pragma solidity ^0.4.20;
+pragma solidity ^0.4.24;
 
 import "@settlemint/solidity-mint/contracts/utility/upgrading/Dispatcher.sol";
 import "@settlemint/solidity-mint/contracts/marketplaces/tokensystem/interfaces/IToken.sol";
 import "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListing.sol";
 import "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListingFactory.sol";
 import "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/ChallengeRegistry.sol";
-import "@settlemint/solidity-mint/contracts/utility/caching/CachedByAddress.sol";
 
 
 /**
  * Dispatches calls to the sensor registry
  */
-contract SensorRegistryDispatcher is Dispatcher, CachedByAddress {
+contract SensorRegistryDispatcher is Dispatcher {
 
   // Same state as contract it will refer to
   uint minEnlistAmount;
@@ -23,7 +22,7 @@ contract SensorRegistryDispatcher is Dispatcher, CachedByAddress {
   IListingFactory public listingFactory;
   ChallengeRegistry challengeRegistry;
 
-  function SensorRegistryDispatcher(
+  constructor(
     address _gateKeeper,
     address _token,
     address _listingFactory,
@@ -33,7 +32,6 @@ contract SensorRegistryDispatcher is Dispatcher, CachedByAddress {
     uint _curatorPercentage
   )
     Secured(_gateKeeper)
-    CachedByAddress(this)
     public
   {
     // State also needs to initialized!
@@ -48,6 +46,5 @@ contract SensorRegistryDispatcher is Dispatcher, CachedByAddress {
 
   function setTarget(address _target) public {
     super.setTarget(_target);
-    super.invalidateCache();
   }
 }

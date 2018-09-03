@@ -1,7 +1,8 @@
-pragma solidity ^0.4.20;
+pragma solidity ^0.4.24;
 
 import "../purchase/Purchase.sol";
 import "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/Listing.sol";
+
 
 /**
  * Contains one sensor entity
@@ -16,20 +17,14 @@ contract Sensor is Listing {
   @param _stakeAmount    Amount staked for the listing
   @param _gateKeeper     Address of the gatekeeper
   */
-  function Sensor(
+  constructor(
     address _owner,
     uint _price,
     uint _stakeAmount,
     address _gateKeeper
   )
-    Listing(_owner, _price, _stakeAmount, _gateKeeper)
     public
+    Listing(_owner, _price, _stakeAmount, _gateKeeper)
   {}
 
-  /**
-  * implementation of cacher methods
-  */
-  function invalidateCache(address _cachedAddress, bytes32 /*_cachedBytes32*/, uint256 /*_cachedUint256*/) public {
-    emit AddressCacheInvalidated(_cachedAddress);
-  }
 }

@@ -1,52 +1,14 @@
 const { grantPermission, createPermission } = require('./helpers/permissions')
 
-const SensorRegistry = artifacts.require('SensorRegistry')
-const PurchaseRegistry = artifacts.require('PurchaseRegistry')
+const SensorRegistry = artifacts.require('SensorRegistry.sol')
+const PurchaseRegistry = artifacts.require('PurchaseRegistry.sol')
 const PurchaseRegistryDispatcher = artifacts.require(
-  'PurchaseRegistryDispatcher'
+  'PurchaseRegistryDispatcher.sol'
 )
-const Token = artifacts.require('DtxToken')
-const GateKeeper = artifacts.require('GateKeeper')
+const Token = artifacts.require('DtxToken.sol')
+const GateKeeper = artifacts.require('GateKeeper.sol')
 
-const { authenticate, addIpfs } = require('./helpers/api')
-
-async function purchaseSensor(deployer, network, accounts) {
-  const purchase = await PurchaseRegistry.deployed()
-  const token = await Token.deployed()
-
-  // Add metadata
-  const metadata = {
-    data: {
-      email: 'silke@databrokerdao.com',
-    },
-  }
-
-  // Authenticate
-  const authToken = await authenticate(network)
-
-  if (authToken) {
-    // Add metadata as ipfs
-    const ipfsHash = await addIpfs(metadata, authToken, network)
-
-    // Get sensor address
-    const sensorAddress = process.env.SENSOR_ADDRESS
-    // Calculate endtime
-    const endtime = Math.floor(new Date().getTime() / 1000) + 60 // one minute from now
-
-    // First, approve!
-    await token.approve(purchase.address, '1000', {
-      from: accounts[0],
-    })
-
-    await purchase.purchaseAccess(sensorAddress, endtime, ipfsHash, {
-      from: accounts[0],
-    })
-  } else {
-    console.log('AUTH FAILED: not going forward with demo purchase')
-  }
-}
-
-async function deployPurchasing(deployer, network, accounts) {
+module.exports = async function(deployer, network, accounts) {
   const dGateKeeper = await GateKeeper.deployed()
   const dDtxToken = await Token.deployed()
   const dSensorRegistry = await SensorRegistry.deployed()
@@ -102,17 +64,4 @@ async function deployPurchasing(deployer, network, accounts) {
     'CHANGE_SETTINGS_ROLE',
     accounts[0]
   )
-
-  // await purchaseSensor(deployer, network, accounts)
-}
-
-module.exports = async (deployer, network, accounts) => {
-  deployer
-    .then(function(a) {
-      return deployPurchasing(deployer, network, accounts)
-    })
-    .catch(error => {
-      console.log(error)
-      process.exit(1)
-    })
 }

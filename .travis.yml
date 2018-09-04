@@ -11,16 +11,13 @@ notifications:
       - settlemint:5QuOPa3Z4kJbfbNIgei0asur#mint
 
 node_js:
-  - '8'
-
+  - '9'
 
 before_install:
   - docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}";
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > ~/.npmrc
-  - npm i -g @settlemint/mint-cli ganache-cli
+  - npm i -g @settlemint/mint-cli ganache-cli truffle
   - ganache-cli -l 0xfffffffffff -i 1337 -m "robot robot robot robot robot robot robot robot robot robot robot robot" > /dev/null &
-
-script: echo "npm test temporarily disabled"
 
 after_success:
   - npm run semantic-release

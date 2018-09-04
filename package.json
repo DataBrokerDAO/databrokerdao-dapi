@@ -11,8 +11,8 @@
   },
   "scripts": {
     "dev-test": "mint compile --all && mint migrate --reset && mint test",
-    "dev": "mint compile --all && mint start",
-    "test": "mint test",
+    "dev": "truffle compile --all",
+    "test": "truffle test",
     "lint": "npm run solium -- --dir contracts --fix",
     "watch": "nodemon --watch . --exec npm run test",
     "semantic-release": "semantic-release",

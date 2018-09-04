@@ -13,14 +13,15 @@ contract('SensorRegistry', accounts => {
       const registry = await SensorRegistry.deployed()
 
       try {
-        assert.throws(
-          await registry.setCuratorPercentage(10, {
-            from: 0x0,
-          }),
-          'revert'
+        await registry.setCuratorPercentage(10, {
+          from: accounts[9],
+        })
+      } catch (err) {
+        assert.equal(
+          err.reason,
+          'You do not have the correct roles',
+          err.reason
         )
-      } catch (e) {
-        console.log(e)
       }
     })
 
@@ -43,14 +44,11 @@ contract('SensorRegistry', accounts => {
       const registry = await SensorRegistry.deployed()
 
       try {
-        assert.throws(
-          await registry.setMinChallengeAmount(10, {
-            from: 0x0,
-          }),
-          'revert'
-        )
-      } catch (e) {
-        console.log(e)
+        await registry.setMinChallengeAmount(10, {
+          from: accounts[9],
+        })
+      } catch (err) {
+        assert(err.reason === 'You do not have the correct roles', err.reason)
       }
     })
 
@@ -73,14 +71,15 @@ contract('SensorRegistry', accounts => {
       const registry = await SensorRegistry.deployed()
 
       try {
-        assert.throws(
-          await registry.setMinEnlistAmount(10, {
-            from: 0x0,
-          }),
-          'revert'
+        await registry.setMinEnlistAmount(10, {
+          from: accounts[9],
+        })
+      } catch (err) {
+        assert.equal(
+          err.reason,
+          'You do not have the correct roles',
+          err.reason
         )
-      } catch (e) {
-        console.log(e)
       }
     })
 

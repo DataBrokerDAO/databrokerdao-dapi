@@ -1,5 +1,4 @@
 const axios = require('axios')
-const _ = require('lodash')
 
 const GATEWAY_OPERATOR_PRIVATE_KEY =
   'ca1398820695e93cea849b841a9aae4eeae65518d14353ab73d21fa4af2d58a7'
@@ -7,10 +6,9 @@ const GATEWAY_OPERATOR_ADDRESS = '0x3df2fd51cf19c0d8d1861d6ebc6457a1b0c7496f'
 
 function getBaseUrl(network) {
   switch (network) {
-    case 'development':
-      return 'http://localhost:3333'
     case 'minttestnet':
       return 'https://dapi-staging.databrokerdao.com'
+    case 'development':
     default:
       return 'http://localhost:3333'
   }

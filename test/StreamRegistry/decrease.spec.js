@@ -17,32 +17,33 @@ contract('SensorRegistry', accounts => {
       const token = await Token.deployed()
 
       // Enlist before we can decrease
-      await token.approve(registry.address, '20', {
+      await token.approve(registry.address, web3.utils.toWei('60'), {
         from: seller,
       })
-      const tx = await registry.enlist('20', '10', '', {
+      const tx = await registry.enlist(web3.utils.toWei('60'), '10', '', {
         from: seller,
       })
       const listingAddress = getEventProperty(tx, 'Enlisted', 'listing')
 
-      await token.approve(seller, '10', {
-        from: seller,
-      })
-      const tx2 = await registry.decrease(listingAddress, '5', {
-        from: seller,
-      })
+      const tx2 = await registry.decrease(
+        listingAddress,
+        web3.utils.toWei('5'),
+        {
+          from: seller,
+        }
+      )
 
       // Check if event was emitted
       testEvent(tx2, 'Decreased', {
         listing: listingAddress,
-        decreasedBy: '5',
-        newStake: '15',
+        decreasedBy: web3.utils.toWei('5'),
+        newStake: web3.utils.toWei('55'),
       })
 
       const sensor = await Sensor.at(listingAddress)
       const sensorStake = await sensor.stake.call()
 
-      assert.equal(sensorStake, '15')
+      assert.equal(sensorStake, web3.utils.toWei('55'))
     })
 
     it('should not decrease when stake amount would go beneath minimum stake', async () => {
@@ -50,18 +51,22 @@ contract('SensorRegistry', accounts => {
       const token = await Token.deployed()
 
       // Enlist before we can decrease
-      await token.approve(registry.address, '10', {
+      await token.approve(registry.address, web3.utils.toWei('50'), {
         from: seller,
       })
-      const tx = await registry.enlist('10', '10', '', {
+      const tx = await registry.enlist(web3.utils.toWei('50'), '10', '', {
         from: seller,
       })
       const listingAddress = getEventProperty(tx, 'Enlisted', 'listing')
 
       try {
-        assert.throws(await registry.decrease(listingAddress, '5'), 'revert')
-      } catch (e) {
-        console.log(e)
+        await registry.decrease(listingAddress, web3.utils.toWei('5'))
+      } catch (err) {
+        assert(
+          err.reason === 'stake - _stakeAmount >= minEnlistAmount',
+          err.reason
+        )
+        //assert(err.reason.includes('not less than balance'))
       }
     })
   })

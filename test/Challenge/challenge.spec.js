@@ -20,25 +20,30 @@ contract('SensorRegistry', accounts => {
       const challengeRegistry = await ChallengeRegistry.deployed()
 
       // Enlist before we can challenge
-      await token.approve(registry.address, '20', {
+      await token.approve(registry.address, web3.utils.toWei('50'), {
         from: seller,
       })
-      const tx = await registry.enlist('20', '10', '', {
+      const tx = await registry.enlist(web3.utils.toWei('50'), '10', '', {
         from: seller,
       })
       const listingAddress = getEventProperty(tx, 'Enlisted', 'listing')
 
-      await token.approve(registry.address, '5', {
+      await token.approve(registry.address, web3.utils.toWei('50'), {
         from: seller,
       })
-      const tx2 = await registry.challenge(listingAddress, '5', '', {
-        from: seller,
-      })
+      const tx2 = await registry.challenge(
+        listingAddress,
+        web3.utils.toWei('50'),
+        '',
+        {
+          from: seller,
+        }
+      )
 
       // Check if event was emitted
       testEvent(tx2, 'Challenged', {
         listing: listingAddress,
-        stake: '5',
+        stake: web3.utils.toWei('50'),
       })
 
       // Check if listing is updated
@@ -46,8 +51,17 @@ contract('SensorRegistry', accounts => {
       const sensorChallengesStake = await sensor.challengesStake.call()
       const sensorNumberOfChallenges = await sensor.numberOfChallenges.call()
 
-      assert.equal(sensorChallengesStake, 5)
-      assert.equal(sensorNumberOfChallenges, 1)
+      assert.equal(
+        sensorChallengesStake,
+        web3.utils.toWei('50'),
+        sensorChallengesStake.toString()
+      )
+      console.log(111, sensorNumberOfChallenges, new web3.utils.BN('1'))
+      assert.equal(
+        sensorNumberOfChallenges.toString(),
+        new web3.utils.BN('1').toString(),
+        sensorNumberOfChallenges.toString()
+      )
 
       const challengeAddress = getEventProperty(tx2, 'Challenged', 'challenge')
 
@@ -70,21 +84,18 @@ contract('SensorRegistry', accounts => {
       const token = await Token.deployed()
 
       // Enlist before we can unlist
-      await token.approve(registry.address, '20', {
+      await token.approve(registry.address, web3.utils.toWei('50'), {
         from: seller,
       })
-      const tx = await registry.enlist('20', '10', '', {
+      const tx = await registry.enlist(web3.utils.toWei('50'), '10', '', {
         from: seller,
       })
       const listingAddress = getEventProperty(tx, 'Enlisted', 'listing')
 
       try {
-        assert.throws(
-          await registry.challenge(listingAddress, '2', ''),
-          'revert'
-        )
-      } catch (e) {
-        console.log(e)
+        await registry.challenge(listingAddress, web3.utils.toWei('2'), '')
+      } catch (err) {
+        assert(err.reason === '_stakeAmount >= minChallengeAmount', err.reason)
       }
     })
   })

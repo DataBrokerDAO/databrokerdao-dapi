@@ -17,23 +17,23 @@ contract('SensorRegistry', accounts => {
       const token = await Token.deployed()
 
       // Enlist before we can unlist
-      await token.approve(registry.address, '20', {
+      await token.approve(registry.address, web3.utils.toWei('100'), {
         from: seller,
       })
-      const tx = await registry.enlist('20', '10', '', {
+      const tx = await registry.enlist(web3.utils.toWei('100'), '10', '', {
         from: seller,
       })
       const listingAddress = getEventProperty(tx, 'Enlisted', 'listing')
 
       // Add some challenges
-      await token.approve(registry.address, '5', {
+      await token.approve(registry.address, web3.utils.toWei('50'), {
         from: seller,
       })
-      await registry.challenge(listingAddress, '5', '') // challenge 1
-      await token.approve(registry.address, '10', {
+      await registry.challenge(listingAddress, web3.utils.toWei('50'), '') // challenge 1
+      await token.approve(registry.address, web3.utils.toWei('60'), {
         from: seller,
       })
-      await registry.challenge(listingAddress, '10', '') // challenge 2
+      await registry.challenge(listingAddress, web3.utils.toWei('60'), '') // challenge 2
 
       // Deny
       // No need to approve: we are transfering tokens from the contract itself
@@ -51,8 +51,14 @@ contract('SensorRegistry', accounts => {
       const sensorStake = await sensor.stake.call()
       const sensorChallengesStake = await sensor.challengesStake.call()
 
-      assert.equal(sensorStake.c[0], 20)
-      assert.equal(sensorChallengesStake.c[0], 0)
+      assert.equal(
+        sensorStake,
+        web3.utils.toWei('100'),
+        `${sensorStake.toString()} is not equal to ${web3.utils
+          .toWei('100')
+          .toString()}`
+      )
+      assert.equal(sensorChallengesStake, web3.utils.toWei('0'))
     })
   })
 })

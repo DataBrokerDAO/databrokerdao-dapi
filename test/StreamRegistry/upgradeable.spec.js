@@ -16,19 +16,19 @@ contract('SensorRegistry', accounts => {
     it('is upgradeable', async () => {
       const registryDispatcher = await SensorRegistryDispatcher.deployed()
       const registryAddress = await registryDispatcher.target.call()
-      const registry = SensorRegistry.at(registryAddress)
+      const registry = await SensorRegistry.at(registryAddress)
       const token = await Token.deployed()
 
-      await token.approve(registry.address, '10', {
+      await token.approve(registry.address, web3.utils.toWei('50'), {
         from: seller,
       })
-      const tx = await registry.enlist('10', '1', '', {
+      const tx = await registry.enlist(web3.utils.toWei('50'), '1', '', {
         from: seller,
       })
 
       // Check if events have been emitted
       testEvent(tx, 'Enlisted', {
-        stake: '10',
+        stake: web3.utils.toWei('50'),
         price: '1',
       })
     })

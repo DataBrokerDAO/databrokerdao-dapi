@@ -18,21 +18,21 @@ contract('PurchaseRegistry', accounts => {
     it('should allow a user to buy access to sensor data', async () => {
       const purchasingDispatcher = await PurchaseRegistryDispatcher.deployed()
       const purchasingAddress = await purchasingDispatcher.target.call()
-      const purchasing = PurchaseRegistry.at(purchasingAddress)
+      const purchasing = await PurchaseRegistry.at(purchasingAddress)
       const registry = await SensorRegistry.deployed()
       const token = await Token.deployed()
 
       // Enlist first
-      await token.approve(registry.address, '10', {
+      await token.approve(registry.address, web3.utils.toWei('50'), {
         from: seller,
       })
-      const tx = await registry.enlist('10', '1', '', {
+      const tx = await registry.enlist(web3.utils.toWei('50'), '1', '', {
         from: seller,
       })
       const listingAddress = getEventProperty(tx, 'Enlisted', 'listing')
 
       // Then purchase
-      await token.approve(purchasing.address, '100', {
+      await token.approve(purchasing.address, web3.utils.toWei('100'), {
         from: seller,
       })
       const endTime = new Date().getTime() / 1000 + 60 // one minute from now

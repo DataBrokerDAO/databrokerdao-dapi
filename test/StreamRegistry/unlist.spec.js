@@ -17,10 +17,10 @@ contract('SensorRegistry', accounts => {
       const token = await Token.deployed()
 
       // Enlist before we can unlist
-      await token.approve(registry.address, '10', {
+      await token.approve(registry.address, web3.utils.toWei('50'), {
         from: seller,
       })
-      const tx = await registry.enlist('10', '1', '', {
+      const tx = await registry.enlist(web3.utils.toWei('50'), '1', '', {
         from: seller,
       })
       const listingAddress = getEventProperty(tx, 'Enlisted', 'listing')

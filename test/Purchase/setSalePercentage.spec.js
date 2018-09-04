@@ -13,14 +13,11 @@ contract('PurchaseRegistry', accounts => {
       const purchasing = await PurchaseRegistry.deployed()
 
       try {
-        assert.throws(
-          await purchasing.setSalePercentage(10, {
-            from: 0x0,
-          }),
-          'revert'
-        )
-      } catch (e) {
-        console.log(e)
+        await purchasing.setSalePercentage(10, {
+          from: accounts[9],
+        })
+      } catch (err) {
+        assert(err.reason === 'You do not have the correct roles')
       }
     })
 

@@ -16,16 +16,16 @@ contract('SensorRegistry', accounts => {
       const registry = await SensorRegistry.deployed()
       const token = await Token.deployed()
 
-      await token.approve(registry.address, '10', {
+      await token.approve(registry.address, web3.utils.toWei('50'), {
         from: seller,
       })
-      const tx = await registry.enlist('10', '1', '', {
+      const tx = await registry.enlist(web3.utils.toWei('50'), '1', '', {
         from: seller,
       })
 
       // Check if events have been emitted
       testEvent(tx, 'Enlisted', {
-        stake: '10',
+        stake: web3.utils.toWei('50'),
         price: '1',
       })
 
@@ -39,7 +39,7 @@ contract('SensorRegistry', accounts => {
       const sensorPrice = await sensor.price.call()
 
       assert.equal(sensorOwner, seller)
-      assert.equal(sensorStake, '10')
+      assert.equal(sensorStake, web3.utils.toWei('50'))
       assert.equal(sensorChallengesStake, '0')
       assert.equal(sensorPrice, '1')
     })
@@ -49,14 +49,15 @@ contract('SensorRegistry', accounts => {
       const token = await Token.deployed()
 
       // Enlist before we can unlist
-      await token.approve(seller, '10', {
+      await token.approve(seller, web3.utils.toWei('50'), {
         from: seller,
       })
 
       try {
-        assert.throws(await registry.enlist('1', '1'), 'invalid opcode')
-      } catch (e) {
-        console.log(e)
+        await registry.enlist('1', '1', '')
+      } catch (err) {
+        assert(err.reason === '_stakeAmount >= minEnlistAmount')
+        // assert(err.message.includes('not authorized');
       }
     })
   })

@@ -16,7 +16,7 @@ const GateKeeper = artifacts.require('GateKeeper.sol')
 async function approveRegistryFor(addresses, dDtxToken, index) {
   const user = addresses[index]
   // Mint tokens for user
-  await dDtxToken.mint(user, web3.utils.toWei('100'), {
+  await dDtxToken.mint(user, web3.utils.toWei('1000'), {
     from: addresses[0],
   })
   const balanceOfUser = await dDtxToken.balanceOf(user)
@@ -113,7 +113,7 @@ module.exports = async function(deployer, network, accounts) {
   await approveRegistryFor(accounts, dDtxToken, 0)
 
   // Mint tokens for gateway operator user
-  await dDtxToken.mint(GATEWAY_OPERATOR_ADDRESS, web3.utils.toWei('100000'), {
+  await dDtxToken.mint(GATEWAY_OPERATOR_ADDRESS, web3.utils.toWei('1000'), {
     from: accounts[0],
   })
 

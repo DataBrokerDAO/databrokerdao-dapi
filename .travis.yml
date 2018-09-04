@@ -16,7 +16,7 @@ node_js:
 before_install:
   - docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}";
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > ~/.npmrc
-  - npm i -g @settlemint/mint-cli ganache-cli truffle
+  - npm i -g @settlemint/mint-cli ganache-cli truffle@next
   - ganache-cli -l 0xfffffffffff -i 1337 -m "robot robot robot robot robot robot robot robot robot robot robot robot" > /dev/null &
 
 after_success:

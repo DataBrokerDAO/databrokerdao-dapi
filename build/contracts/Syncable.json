@@ -26,14 +26,14 @@
     "absolutePath": "@settlemint/solidity-mint/contracts/utility/syncing/Syncable.sol",
     "exportedSymbols": {
       "Syncable": [
-        4223
+        4773
       ]
     },
-    "id": 4224,
+    "id": 4774,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4217,
+        "id": 4767,
         "literals": [
           "solidity",
           "^",
@@ -49,9 +49,9 @@
         "contractKind": "contract",
         "documentation": "The listable item should also implement\n@dev function getInfo() constant public returns (bytes32 _productID, bytes32 _issuerProductID, bytes32 _productPayoffCode, address _currency, uint256 _totalSupply) {",
         "fullyImplemented": false,
-        "id": 4223,
+        "id": 4773,
         "linearizedBaseContracts": [
-          4223
+          4773
         ],
         "name": "Syncable",
         "nodeType": "ContractDefinition",
@@ -59,7 +59,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 4222,
+            "id": 4772,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -67,22 +67,22 @@
             "name": "getIndexLength",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4218,
+              "id": 4768,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "293:2:31"
             },
             "payable": false,
             "returnParameters": {
-              "id": 4221,
+              "id": 4771,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4220,
+                  "id": 4770,
                   "name": "length",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4222,
+                  "scope": 4772,
                   "src": "317:11:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -91,7 +91,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4219,
+                    "id": 4769,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "317:4:31",
@@ -106,14 +106,14 @@
               ],
               "src": "316:13:31"
             },
-            "scope": 4223,
+            "scope": 4773,
             "src": "270:60:31",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 4224,
+        "scope": 4774,
         "src": "247:329:31"
       }
     ],
@@ -123,14 +123,14 @@
     "absolutePath": "@settlemint/solidity-mint/contracts/utility/syncing/Syncable.sol",
     "exportedSymbols": {
       "Syncable": [
-        4223
+        4773
       ]
     },
-    "id": 4224,
+    "id": 4774,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4217,
+        "id": 4767,
         "literals": [
           "solidity",
           "^",
@@ -146,9 +146,9 @@
         "contractKind": "contract",
         "documentation": "The listable item should also implement\n@dev function getInfo() constant public returns (bytes32 _productID, bytes32 _issuerProductID, bytes32 _productPayoffCode, address _currency, uint256 _totalSupply) {",
         "fullyImplemented": false,
-        "id": 4223,
+        "id": 4773,
         "linearizedBaseContracts": [
-          4223
+          4773
         ],
         "name": "Syncable",
         "nodeType": "ContractDefinition",
@@ -156,7 +156,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 4222,
+            "id": 4772,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -164,22 +164,22 @@
             "name": "getIndexLength",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4218,
+              "id": 4768,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "293:2:31"
             },
             "payable": false,
             "returnParameters": {
-              "id": 4221,
+              "id": 4771,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4220,
+                  "id": 4770,
                   "name": "length",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4222,
+                  "scope": 4772,
                   "src": "317:11:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -188,7 +188,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4219,
+                    "id": 4769,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "317:4:31",
@@ -203,14 +203,14 @@
               ],
               "src": "316:13:31"
             },
-            "scope": 4223,
+            "scope": 4773,
             "src": "270:60:31",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 4224,
+        "scope": 4774,
         "src": "247:329:31"
       }
     ],
@@ -222,5 +222,5 @@
   },
   "networks": {},
   "schemaVersion": "3.0.0-beta.0",
-  "updatedAt": "2018-09-03T08:50:22.805Z"
+  "updatedAt": "2018-09-11T13:17:41.009Z"
 }

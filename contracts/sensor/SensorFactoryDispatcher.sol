@@ -6,7 +6,6 @@ import "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/in
 import "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListingFactory.sol";
 import "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/ChallengeRegistry.sol";
 
-
 /**
  * Dispatches calls to the sensor factory
  */

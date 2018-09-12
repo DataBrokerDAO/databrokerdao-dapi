@@ -1,5 +1,10 @@
 const GateKeeper = artifacts.require('GateKeeper.sol')
 
 module.exports = async function(deployer, network, accounts) {
-  await deployer.deploy(GateKeeper)
+  try {
+    await deployer.deploy(GateKeeper)
+  } catch (error) {
+    console.log(error)
+    throw error
+  }
 }

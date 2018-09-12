@@ -4,9 +4,9 @@ import "@settlemint/solidity-mint/contracts/marketplaces/tokensystem/Token.sol";
 
 
 /**
- * Contains the DTX token
+ * Contains the Local DTX token
  */
-contract DtxToken is Token {
+contract LocalDTXToken is Token {
 
   constructor(
     bytes32 _name,

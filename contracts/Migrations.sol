@@ -1,4 +1,4 @@
-pragma solidity ^0.4.15;
+pragma solidity ^0.4.24;
 
 
 contract Migrations {
@@ -6,7 +6,7 @@ contract Migrations {
   uint public lastCompletedMigration;
 
   modifier restricted() {
-    require(msg.sender == owner);
+    require(msg.sender == owner, "the sendor of the transaction is not the owner");
     _;
   }
 

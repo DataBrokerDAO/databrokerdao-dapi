@@ -6,7 +6,7 @@ import "@settlemint/solidity-mint/contracts/marketplaces/tokensystem/TokenRegist
 /**
  * Contains all the DTX tokens: in this case, there is only one
  */
-contract DtxTokenRegistry is TokenRegistry {
+contract LocalDTXTokenRegistry is TokenRegistry {
 
   constructor(address _gateKeeper) public TokenRegistry(_gateKeeper) {}
 

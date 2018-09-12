@@ -465,14 +465,14 @@
     "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/Listing.sol",
     "exportedSymbols": {
       "Listing": [
-        1932
+        2482
       ]
     },
-    "id": 1933,
+    "id": 2483,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1910,
+        "id": 2460,
         "literals": [
           "solidity",
           "^",
@@ -485,10 +485,10 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListing.sol",
         "file": "./interfaces/IListing.sol",
-        "id": 1911,
+        "id": 2461,
         "nodeType": "ImportDirective",
-        "scope": 1933,
-        "sourceUnit": 3088,
+        "scope": 2483,
+        "sourceUnit": 3638,
         "src": "26:35:21",
         "symbolAliases": [],
         "unitAlias": ""
@@ -499,48 +499,48 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1912,
+              "id": 2462,
               "name": "IListing",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3087,
+              "referencedDeclaration": 3637,
               "src": "84:8:21",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IListing_$3087",
+                "typeIdentifier": "t_contract$_IListing_$3637",
                 "typeString": "contract IListing"
               }
             },
-            "id": 1913,
+            "id": 2463,
             "nodeType": "InheritanceSpecifier",
             "src": "84:8:21"
           }
         ],
         "contractDependencies": [
-          1683,
-          3087,
-          4215
+          2233,
+          3637,
+          4765
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1932,
+        "id": 2482,
         "linearizedBaseContracts": [
-          1932,
-          3087,
-          4215,
-          1683
+          2482,
+          3637,
+          4765,
+          2233
         ],
         "name": "Listing",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1930,
+              "id": 2480,
               "nodeType": "Block",
               "src": "548:2:21",
               "statements": []
             },
             "documentation": "@dev Contructor\n@notice                Sets the address for token\n@param _owner          Address of the owner\n@param _price          Price for the listing\n@param _stakeAmount    Amount staked for the listing\n@param _gateKeeper     Address of the gatekeeper",
-            "id": 1931,
+            "id": 2481,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -549,11 +549,11 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 1924,
+                    "id": 2474,
                     "name": "_owner",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1915,
+                    "referencedDeclaration": 2465,
                     "src": "492:6:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -562,11 +562,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 1925,
+                    "id": 2475,
                     "name": "_price",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1917,
+                    "referencedDeclaration": 2467,
                     "src": "500:6:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -575,11 +575,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 1926,
+                    "id": 2476,
                     "name": "_stakeAmount",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1919,
+                    "referencedDeclaration": 2469,
                     "src": "508:12:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -588,11 +588,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 1927,
+                    "id": 2477,
                     "name": "_gateKeeper",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1921,
+                    "referencedDeclaration": 2471,
                     "src": "522:11:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -600,17 +600,17 @@
                     }
                   }
                 ],
-                "id": 1928,
+                "id": 2478,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 1923,
+                  "id": 2473,
                   "name": "IListing",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3087,
+                  "referencedDeclaration": 3637,
                   "src": "483:8:21",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_IListing_$3087_$",
+                    "typeIdentifier": "t_type$_t_contract$_IListing_$3637_$",
                     "typeString": "type(contract IListing)"
                   }
                 },
@@ -621,15 +621,15 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1922,
+              "id": 2472,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1915,
+                  "id": 2465,
                   "name": "_owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1931,
+                  "scope": 2481,
                   "src": "395:14:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -638,7 +638,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1914,
+                    "id": 2464,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "395:7:21",
@@ -652,10 +652,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1917,
+                  "id": 2467,
                   "name": "_price",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1931,
+                  "scope": 2481,
                   "src": "415:11:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -664,7 +664,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1916,
+                    "id": 2466,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "415:4:21",
@@ -678,10 +678,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1919,
+                  "id": 2469,
                   "name": "_stakeAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1931,
+                  "scope": 2481,
                   "src": "432:17:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -690,7 +690,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1918,
+                    "id": 2468,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "432:4:21",
@@ -704,10 +704,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1921,
+                  "id": 2471,
                   "name": "_gateKeeper",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1931,
+                  "scope": 2481,
                   "src": "455:19:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -716,7 +716,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1920,
+                    "id": 2470,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "455:7:21",
@@ -733,19 +733,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 1929,
+              "id": 2479,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "548:0:21"
             },
-            "scope": 1932,
+            "scope": 2482,
             "src": "378:172:21",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 1933,
+        "scope": 2483,
         "src": "64:488:21"
       }
     ],
@@ -755,14 +755,14 @@
     "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/Listing.sol",
     "exportedSymbols": {
       "Listing": [
-        1932
+        2482
       ]
     },
-    "id": 1933,
+    "id": 2483,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1910,
+        "id": 2460,
         "literals": [
           "solidity",
           "^",
@@ -775,10 +775,10 @@
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListing.sol",
         "file": "./interfaces/IListing.sol",
-        "id": 1911,
+        "id": 2461,
         "nodeType": "ImportDirective",
-        "scope": 1933,
-        "sourceUnit": 3088,
+        "scope": 2483,
+        "sourceUnit": 3638,
         "src": "26:35:21",
         "symbolAliases": [],
         "unitAlias": ""
@@ -789,48 +789,48 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1912,
+              "id": 2462,
               "name": "IListing",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3087,
+              "referencedDeclaration": 3637,
               "src": "84:8:21",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IListing_$3087",
+                "typeIdentifier": "t_contract$_IListing_$3637",
                 "typeString": "contract IListing"
               }
             },
-            "id": 1913,
+            "id": 2463,
             "nodeType": "InheritanceSpecifier",
             "src": "84:8:21"
           }
         ],
         "contractDependencies": [
-          1683,
-          3087,
-          4215
+          2233,
+          3637,
+          4765
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1932,
+        "id": 2482,
         "linearizedBaseContracts": [
-          1932,
-          3087,
-          4215,
-          1683
+          2482,
+          3637,
+          4765,
+          2233
         ],
         "name": "Listing",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1930,
+              "id": 2480,
               "nodeType": "Block",
               "src": "548:2:21",
               "statements": []
             },
             "documentation": "@dev Contructor\n@notice                Sets the address for token\n@param _owner          Address of the owner\n@param _price          Price for the listing\n@param _stakeAmount    Amount staked for the listing\n@param _gateKeeper     Address of the gatekeeper",
-            "id": 1931,
+            "id": 2481,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -839,11 +839,11 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 1924,
+                    "id": 2474,
                     "name": "_owner",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1915,
+                    "referencedDeclaration": 2465,
                     "src": "492:6:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -852,11 +852,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 1925,
+                    "id": 2475,
                     "name": "_price",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1917,
+                    "referencedDeclaration": 2467,
                     "src": "500:6:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -865,11 +865,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 1926,
+                    "id": 2476,
                     "name": "_stakeAmount",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1919,
+                    "referencedDeclaration": 2469,
                     "src": "508:12:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -878,11 +878,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 1927,
+                    "id": 2477,
                     "name": "_gateKeeper",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1921,
+                    "referencedDeclaration": 2471,
                     "src": "522:11:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -890,17 +890,17 @@
                     }
                   }
                 ],
-                "id": 1928,
+                "id": 2478,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 1923,
+                  "id": 2473,
                   "name": "IListing",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3087,
+                  "referencedDeclaration": 3637,
                   "src": "483:8:21",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_IListing_$3087_$",
+                    "typeIdentifier": "t_type$_t_contract$_IListing_$3637_$",
                     "typeString": "type(contract IListing)"
                   }
                 },
@@ -911,15 +911,15 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1922,
+              "id": 2472,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1915,
+                  "id": 2465,
                   "name": "_owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1931,
+                  "scope": 2481,
                   "src": "395:14:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -928,7 +928,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1914,
+                    "id": 2464,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "395:7:21",
@@ -942,10 +942,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1917,
+                  "id": 2467,
                   "name": "_price",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1931,
+                  "scope": 2481,
                   "src": "415:11:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -954,7 +954,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1916,
+                    "id": 2466,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "415:4:21",
@@ -968,10 +968,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1919,
+                  "id": 2469,
                   "name": "_stakeAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1931,
+                  "scope": 2481,
                   "src": "432:17:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -980,7 +980,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1918,
+                    "id": 2468,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "432:4:21",
@@ -994,10 +994,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1921,
+                  "id": 2471,
                   "name": "_gateKeeper",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1931,
+                  "scope": 2481,
                   "src": "455:19:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1006,7 +1006,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1920,
+                    "id": 2470,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "455:7:21",
@@ -1023,19 +1023,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 1929,
+              "id": 2479,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "548:0:21"
             },
-            "scope": 1932,
+            "scope": 2482,
             "src": "378:172:21",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 1933,
+        "scope": 2483,
         "src": "64:488:21"
       }
     ],
@@ -1047,5 +1047,5 @@
   },
   "networks": {},
   "schemaVersion": "3.0.0-beta.0",
-  "updatedAt": "2018-09-03T08:50:22.796Z"
+  "updatedAt": "2018-09-11T13:17:40.999Z"
 }

@@ -1,4 +1,3 @@
-const config = require('./config/deploy_bridge.json')
 const ForeignBridge = artifacts.require('ForeignBridge.sol')
 const HDWalletProvider = require('truffle-hdwallet-provider')
 const GateKeeper = artifacts.require('GateKeeper.sol')
@@ -7,6 +6,7 @@ const { grantPermission } = require('./helpers/permissions')
 
 module.exports = async function(deployer, network, accounts) {
   try {
+    const config = require('./config/deploy_bridge.json')
     const validators = config.validatorSeeds.map(seedToAddress)
     await deployer.deploy(ForeignBridge, config.requiredValidators, validators)
 

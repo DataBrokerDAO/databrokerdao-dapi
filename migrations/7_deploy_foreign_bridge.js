@@ -5,8 +5,16 @@ const Token = artifacts.require('LocalDTXToken.sol')
 const { grantPermission } = require('./helpers/permissions')
 
 module.exports = async function(deployer, network, accounts) {
+  let config = {}
+
   try {
-    const config = require('./config/deploy_bridge.json')
+    config = require('./config/deploy_bridge.json')
+  } catch (error) {
+    console.log('No configuration file found')
+    // don't rethrow
+  }
+
+  try {
     const validators = config.validatorSeeds.map(seedToAddress)
     await deployer.deploy(ForeignBridge, config.requiredValidators, validators)
 

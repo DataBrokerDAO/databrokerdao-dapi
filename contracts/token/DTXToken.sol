@@ -1,6 +1,6 @@
 pragma solidity ^0.4.19;
 
-import "./external/MiniMeToken.sol";
+import "../external/MiniMeToken.sol";
 
 
 contract DTXToken is MiniMeToken {

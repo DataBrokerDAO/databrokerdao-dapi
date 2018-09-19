@@ -10,8 +10,8 @@ module.exports = async function(deployer, network, accounts) {
   try {
     config = require('./config/deploy_bridge.json')
   } catch (error) {
-    console.log('No configuration file found')
-    // don't rethrow
+    console.log('Could not deploy bridge, no configuration file found')
+    return
   }
 
   try {

@@ -646,10 +646,10 @@
         }
       },
       "links": {},
-      "address": "0x755a4c0Cb9F7a277F9304f078E5eE31DDF087200",
-      "transactionHash": "0x0ab35e48db6b1132116012f4c86f35bcdfc1f5fff8d4d8a0f6c55ced40c2acd5"
+      "address": "0x879D8748BDD96C535839f5F410ab6F3f992E71Af",
+      "transactionHash": "0x067c184b5221acea1e081ad4a3e26177384ca4acd25ed04453c66f584addeede"
     }
   },
   "schemaVersion": "3.0.0-beta.0",
-  "updatedAt": "2018-09-20T11:27:10.097Z"
+  "updatedAt": "2018-09-20T11:38:05.843Z"
 }

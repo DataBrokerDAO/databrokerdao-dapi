@@ -16,6 +16,7 @@ module.exports = async function(deployer, network, accounts) {
 
   try {
     const validators = config.validatorSeeds.map(seedToAddress)
+    console.log(validators);
     await deployer.deploy(ForeignBridge, config.requiredValidators, validators)
 
     const dGateKeeper = await GateKeeper.deployed()

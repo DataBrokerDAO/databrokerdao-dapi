@@ -557,6 +557,52 @@
     "version": "0.4.24+commit.e67f0147.Emscripten.clang"
   },
   "networks": {
+    "1337": {
+      "events": {
+        "0x6a7971839356e91af1f994a516a95eac2d3583cb6ba16b104843fcc927d77dae": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "_address",
+              "type": "address"
+            }
+          ],
+          "name": "Designated",
+          "type": "event",
+          "signature": "0x6a7971839356e91af1f994a516a95eac2d3583cb6ba16b104843fcc927d77dae"
+        },
+        "0xa918a014a3cc4d384620aab101a9de9a018850704254ab6ce288864db9abd98b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "_address",
+              "type": "address"
+            }
+          ],
+          "name": "Discharged",
+          "type": "event",
+          "signature": "0xa918a014a3cc4d384620aab101a9de9a018850704254ab6ce288864db9abd98b"
+        },
+        "0xe1024fd8985d06ce8c9f997f972a1260bbbb007e7f7496825505aff3b18165e9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "_address",
+              "type": "address"
+            }
+          ],
+          "name": "RoleRegistryCreated",
+          "type": "event",
+          "signature": "0xe1024fd8985d06ce8c9f997f972a1260bbbb007e7f7496825505aff3b18165e9"
+        }
+      },
+      "links": {},
+      "address": "0x140540523dfcEf779D904A9d70eE2F59b7EBf68E",
+      "transactionHash": "0xecaac8b27ca4e376acd39fcd52a8391e8a801d152c8c26e5df1eace7315d545d"
+    },
     "8995": {
       "events": {
         "0x6a7971839356e91af1f994a516a95eac2d3583cb6ba16b104843fcc927d77dae": {
@@ -600,10 +646,10 @@
         }
       },
       "links": {},
-      "address": "0x7a85a86B78A84d67BfFf7c7F4AB4a17316faE625",
-      "transactionHash": "0x660b3171f05629977823a77acc5e7584bb291d1bfebf2a444af1ce26b6e47f84"
+      "address": "0x755a4c0Cb9F7a277F9304f078E5eE31DDF087200",
+      "transactionHash": "0x0ab35e48db6b1132116012f4c86f35bcdfc1f5fff8d4d8a0f6c55ced40c2acd5"
     }
   },
   "schemaVersion": "3.0.0-beta.0",
-  "updatedAt": "2018-09-12T09:19:00.542Z"
+  "updatedAt": "2018-09-20T11:27:10.097Z"
 }

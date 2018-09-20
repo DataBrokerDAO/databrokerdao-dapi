@@ -10398,6 +10398,64 @@
     "version": "0.4.24+commit.e67f0147.Emscripten.clang"
   },
   "networks": {
+    "1337": {
+      "events": {
+        "0x759b9a74d5354b5801710a0c1b283cc9f0d32b607ac8ced10c83ac8e75c77d52": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "entity",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "contractAddress",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "role",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "allowed",
+              "type": "bool"
+            }
+          ],
+          "name": "SetPermission",
+          "type": "event",
+          "signature": "0x759b9a74d5354b5801710a0c1b283cc9f0d32b607ac8ced10c83ac8e75c77d52"
+        },
+        "0xf3addc8b8e25ee11528a61b0e65092cae0666ef0ec0c64cb303993c88d689b4d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "contractAddress",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "role",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "name": "manager",
+              "type": "address"
+            }
+          ],
+          "name": "ChangePermissionManager",
+          "type": "event",
+          "signature": "0xf3addc8b8e25ee11528a61b0e65092cae0666ef0ec0c64cb303993c88d689b4d"
+        }
+      },
+      "links": {},
+      "address": "0xBC4c8E29288CecfB08a71e9B0F3cf6dBC2e6EF4C",
+      "transactionHash": "0x8f627241f4bcbd2efa27625fc3b7b2b9bdcca9848d74ac06cc73c9df8ce385a7"
+    },
     "8995": {
       "events": {
         "0x759b9a74d5354b5801710a0c1b283cc9f0d32b607ac8ced10c83ac8e75c77d52": {
@@ -10453,10 +10511,10 @@
         }
       },
       "links": {},
-      "address": "0x98378D2D6A6Fe9934B9f6E9eeFB74c786842013D",
-      "transactionHash": "0xb9cd939cdaaa25697e1bbd6787aa9493f62ec415d9f7c7d367ac01d5ead26d95"
+      "address": "0xc73Ea5401f689224cc188ffAdCD4262992Dd159A",
+      "transactionHash": "0x597093666b5670538d89a34bf06132d550a19198782c28313adb5540e3542db8"
     }
   },
   "schemaVersion": "3.0.0-beta.0",
-  "updatedAt": "2018-09-12T09:21:45.729Z"
+  "updatedAt": "2018-09-20T11:29:55.885Z"
 }

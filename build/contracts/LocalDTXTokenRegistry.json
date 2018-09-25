@@ -539,16 +539,16 @@
     "1337": {
       "events": {},
       "links": {},
-      "address": "0x2373097618B32384d7FDd881Ba7b5D8fa0B53d28",
-      "transactionHash": "0x7037fe35b8ef533fbfa1bcaf5f335040a6543449737f82ed82605444e3f72a7c"
+      "address": "0xfcEd01c220f74a24a46ae723db00a081fBBCFaB5",
+      "transactionHash": "0xef6660b073c6ca8b746f630d89e834c94a79bd151182c83e8012fd70abf1d370"
     },
     "8995": {
       "events": {},
       "links": {},
-      "address": "0x1ACCe362116EE9B083B54ec80d1A98712f481eaB",
-      "transactionHash": "0x92e45356f143c353f68c1c4894199d78fb5fe96ea45c5eef217b73a10647762b"
+      "address": "0x303fCc804cc9325dDcCe45625936f6636df52d4C",
+      "transactionHash": "0x14ab3ffd60c3777c0f5823990e2cdcf68cfd976d75d2d6a989964e099826cf2f"
     }
   },
   "schemaVersion": "3.0.0-beta.0",
-  "updatedAt": "2018-09-20T11:38:40.936Z"
+  "updatedAt": "2018-09-25T07:21:55.224Z"
 }

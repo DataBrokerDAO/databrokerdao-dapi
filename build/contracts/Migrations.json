@@ -1503,16 +1503,16 @@
     "1337": {
       "events": {},
       "links": {},
-      "address": "0x09A92B7cFc070EE9327e27419acD135e30C1f40e",
-      "transactionHash": "0x2f31a789e124194ac0d8cdc7537b33906bed3177ea19958a72ee0ca55498aa20"
+      "address": "0xD6C9FF47eC31C66f5c31d430c350b5F96331Eb7E",
+      "transactionHash": "0x3e5bd30458e6d6f752268545306f6250b39dc6aa93dcef1cfccd9e856c6fed78"
     },
     "8995": {
       "events": {},
       "links": {},
-      "address": "0xF96Ae41bCcE6295a1239C92F493Db0c5FbDd0aF7",
-      "transactionHash": "0x182bb8b634c9999a78ce5d16bd8a760dc17cd0b558ae7926c62c4d06227a2029"
+      "address": "0xfc729AD0b188F8260DB3c9dBa993be4CE572FCFd",
+      "transactionHash": "0xc8839bfde9cf1c2b00738f742be42a3a07306a9767989e12c5a4386ae48a72a9"
     }
   },
   "schemaVersion": "3.0.0-beta.0",
-  "updatedAt": "2018-09-20T11:40:50.111Z"
+  "updatedAt": "2018-09-25T07:29:55.381Z"
 }

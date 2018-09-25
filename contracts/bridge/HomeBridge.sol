@@ -97,15 +97,20 @@ contract HomeBridge is Validatable, ApproveAndCallFallBack {
     address _token,
     bytes _data) public
     {
-		assert(_from != 0x0);
-		assert(_token != 0x0);
-		assert(_amount > 0);
+    assert(_from != 0x0);
+    assert(_token != 0x0);
+    assert(_amount > 0);
 
-    require(MiniMeToken(_token).allowance(_from, address(this)) >= _amount);
-		MiniMeToken(_token).transferFrom(_from, address(this), _amount);
+    require(MiniMeToken(_token).allowance(_from, address(this)) >= _amount, "The allowance is less than the amount asking to be approved");
+    MiniMeToken(_token).transferFrom(_from, address(this), _amount);
 
-		emit DepositReceived(_from, _amount, _token, _data);
-	}
+    emit DepositReceived(
+      _from,
+      _amount,
+      _token,
+      _data
+    );
+  }
 
 }
 

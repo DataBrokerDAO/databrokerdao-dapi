@@ -10453,8 +10453,8 @@
         }
       },
       "links": {},
-      "address": "0xBC4c8E29288CecfB08a71e9B0F3cf6dBC2e6EF4C",
-      "transactionHash": "0x8f627241f4bcbd2efa27625fc3b7b2b9bdcca9848d74ac06cc73c9df8ce385a7"
+      "address": "0xc2918F70D0B7977F7575f62613bf38C1393CfDd3",
+      "transactionHash": "0x839e713b83f05d059034758216df65baeaed5496443169ea1ad2734d5df95772"
     },
     "8995": {
       "events": {
@@ -10511,10 +10511,10 @@
         }
       },
       "links": {},
-      "address": "0xBF3119408B20DEbDde9624326CB5361b51f44855",
-      "transactionHash": "0x14e8ef6a791b46b4051ca0ff9de213a5b4248fe2ea62396dc2987262ac014d79"
+      "address": "0xcEF475A2Ce58d03b4c72270119FeE2BB5849d0D1",
+      "transactionHash": "0x1cde93bd99b6c43d7d84823ab4f3d7e6778ca56c740118606b5e0378144d690d"
     }
   },
   "schemaVersion": "3.0.0-beta.0",
-  "updatedAt": "2018-09-20T11:40:50.127Z"
+  "updatedAt": "2018-09-25T07:29:55.393Z"
 }

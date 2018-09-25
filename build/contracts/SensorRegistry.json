@@ -1448,16 +1448,16 @@
     "1337": {
       "events": {},
       "links": {},
-      "address": "0xE541d21e38EfD1B40Edad60Fa038847Fb235719b",
-      "transactionHash": "0x2ec7566142f51ad7518c875e633cf4b2aea42b4d97a986d003cee5ef5908a1dc"
+      "address": "0x5a6651a51A20F4AFF7a06beB9794dd7E59e87201",
+      "transactionHash": "0x8a71d6f3db9a9d7ca2b32d431d28c95a4bbb9aada731bb4ce5b130203b04d8db"
     },
     "8995": {
       "events": {},
       "links": {},
-      "address": "0x56117f394cF715E7f2AD4498BD203FbCc3908E36",
-      "transactionHash": "0x7b88319bd8b9f1865552827b013a8ec6cfc1dec311f1fa52b2e2a2e1ab07c9f4"
+      "address": "0x32725B46Bed252Aa960966A9d028aFAb34bCD129",
+      "transactionHash": "0x83921b472bf487be0c7b8579d2e51cb53ef4b3c1b6a8368447ba8e82af47fc23"
     }
   },
   "schemaVersion": "3.0.0-beta.0",
-  "updatedAt": "2018-09-20T11:40:30.117Z"
+  "updatedAt": "2018-09-25T07:23:46.404Z"
 }

@@ -1,11 +1,12 @@
 pragma solidity ^0.4.24;
 
+import "@settlemint/solidity-mint/contracts/marketplaces/tokensystem/interfaces/IApproveAndCallable.sol";
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 import "../token/LocalDTXToken.sol";
 import "./Validatable.sol";
 
 
-contract ForeignBridge is Ownable, Validatable {
+contract ForeignBridge is Ownable, Validatable, IApproveAndCallable {
 
   mapping(bytes32=>uint8) public requests;
   mapping(bytes32=>bool) public requestsDone;
@@ -37,6 +38,12 @@ contract ForeignBridge is Ownable, Validatable {
     address _mainToken,
     address _recipient,
     uint256 _amount
+  );
+  event WithdrawReceived(
+    address indexed _from,
+    uint256 _amount,
+    address _mainToken,
+    bytes _data
   );
   event WithdrawRequestSigned(
     bytes32 _withdrawRequestsHash,
@@ -235,6 +242,33 @@ contract ForeignBridge is Ownable, Validatable {
     }
   }
 
+  function receiveApproval(
+    address _from,
+    uint256 _amount,
+    address _token,
+    bytes _data) public
+    {
+    emit ReceivedApproval(
+      _from,
+      _amount,
+      _token,
+      _data
+    );
+
+    assert(_from != 0x0);
+    assert(_token != 0x0);
+    assert(_amount > 0);
+
+    require(LocalDTXToken(_token).allowance(_from, address(this)) >= _amount, "The allowance is less than the amount asking to be approved");
+    LocalDTXToken(_token).transferFrom(_from, address(this), _amount);
+
+    emit WithdrawReceived(
+      _from,
+      _amount,
+      _token,
+      _data
+    );
+  }
 
 
 }

@@ -2111,16 +2111,16 @@
     "1337": {
       "events": {},
       "links": {},
-      "address": "0xf5fa7331aBb99E000bAC6e73EDC3889E284A23cf",
-      "transactionHash": "0xf5315fab6174c81ef909bf79d2355b0fab7edbb4589569ce54865df8c3c95cb7"
+      "address": "0x27540625DbCc9A83589d829f35b1eFB340f2A57c",
+      "transactionHash": "0x5d90a1e1b3e27bab4c88cbdf85cfe07b50ce43751f37a0734a228d0df7c603ab"
     },
     "8995": {
       "events": {},
       "links": {},
-      "address": "0x220b6F66845883777452af8bf5d0f264183BBf14",
-      "transactionHash": "0xda26fc4b61f1201d998c2e1e29d3889ac42fa84bcc3764332b7582025d7449b3"
+      "address": "0x523fcC2dA378332Ef558eA5D655DEd99D5018Ba3",
+      "transactionHash": "0x8b7f32ff036a73513e7cd41b0cb5503efe00a5a3a5da37b3a08b5284e1dfe0bc"
     }
   },
   "schemaVersion": "3.0.0-beta.0",
-  "updatedAt": "2018-09-20T11:39:50.313Z"
+  "updatedAt": "2018-09-25T07:23:05.468Z"
 }

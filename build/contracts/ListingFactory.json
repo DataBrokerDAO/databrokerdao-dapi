@@ -79,14 +79,14 @@
     "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/ListingFactory.sol",
     "exportedSymbols": {
       "ListingFactory": [
-        2497
+        5753
       ]
     },
-    "id": 2498,
+    "id": 5754,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2484,
+        "id": 5740,
         "literals": [
           "solidity",
           "^",
@@ -94,16 +94,16 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:22"
+        "src": "0:24:28"
       },
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListingFactory.sol",
         "file": "./interfaces/IListingFactory.sol",
-        "id": 2485,
+        "id": 5741,
         "nodeType": "ImportDirective",
-        "scope": 2498,
-        "sourceUnit": 3670,
-        "src": "26:42:22",
+        "scope": 5754,
+        "sourceUnit": 6926,
+        "src": "26:42:28",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -113,46 +113,48 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 2486,
+              "id": 5742,
               "name": "IListingFactory",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3669,
-              "src": "98:15:22",
+              "referencedDeclaration": 6925,
+              "src": "98:15:28",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IListingFactory_$3669",
+                "typeIdentifier": "t_contract$_IListingFactory_$6925",
                 "typeString": "contract IListingFactory"
               }
             },
-            "id": 2487,
+            "id": 5743,
             "nodeType": "InheritanceSpecifier",
-            "src": "98:15:22"
+            "src": "98:15:28"
           }
         ],
         "contractDependencies": [
-          2233,
-          3669
+          3794,
+          6925,
+          8210
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 2497,
+        "id": 5753,
         "linearizedBaseContracts": [
-          2497,
-          3669,
-          2233
+          5753,
+          6925,
+          3794,
+          8210
         ],
         "name": "ListingFactory",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 2495,
+              "id": 5751,
               "nodeType": "Block",
-              "src": "188:2:22",
+              "src": "188:2:28",
               "statements": []
             },
             "documentation": null,
-            "id": 2496,
+            "id": 5752,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -161,49 +163,49 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 2492,
+                    "id": 5748,
                     "name": "_gateKeeper",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 2489,
-                    "src": "168:11:22",
+                    "referencedDeclaration": 5745,
+                    "src": "168:11:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   }
                 ],
-                "id": 2493,
+                "id": 5749,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2491,
+                  "id": 5747,
                   "name": "IListingFactory",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3669,
-                  "src": "152:15:22",
+                  "referencedDeclaration": 6925,
+                  "src": "152:15:28",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_IListingFactory_$3669_$",
+                    "typeIdentifier": "t_type$_t_contract$_IListingFactory_$6925_$",
                     "typeString": "type(contract IListingFactory)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "152:28:22"
+                "src": "152:28:28"
               }
             ],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2490,
+              "id": 5746,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2489,
+                  "id": 5745,
                   "name": "_gateKeeper",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2496,
-                  "src": "131:19:22",
+                  "scope": 5752,
+                  "src": "131:19:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -211,10 +213,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2488,
+                    "id": 5744,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "131:7:22",
+                    "src": "131:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -224,40 +226,40 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "130:21:22"
+              "src": "130:21:28"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2494,
+              "id": 5750,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "188:0:22"
+              "src": "188:0:28"
             },
-            "scope": 2497,
-            "src": "119:71:22",
+            "scope": 5753,
+            "src": "119:71:28",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 2498,
-        "src": "71:121:22"
+        "scope": 5754,
+        "src": "71:121:28"
       }
     ],
-    "src": "0:193:22"
+    "src": "0:193:28"
   },
   "legacyAST": {
     "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/ListingFactory.sol",
     "exportedSymbols": {
       "ListingFactory": [
-        2497
+        5753
       ]
     },
-    "id": 2498,
+    "id": 5754,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2484,
+        "id": 5740,
         "literals": [
           "solidity",
           "^",
@@ -265,16 +267,16 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:22"
+        "src": "0:24:28"
       },
       {
         "absolutePath": "@settlemint/solidity-mint/contracts/marketplaces/tokencuratedregistry/interfaces/IListingFactory.sol",
         "file": "./interfaces/IListingFactory.sol",
-        "id": 2485,
+        "id": 5741,
         "nodeType": "ImportDirective",
-        "scope": 2498,
-        "sourceUnit": 3670,
-        "src": "26:42:22",
+        "scope": 5754,
+        "sourceUnit": 6926,
+        "src": "26:42:28",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -284,46 +286,48 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 2486,
+              "id": 5742,
               "name": "IListingFactory",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3669,
-              "src": "98:15:22",
+              "referencedDeclaration": 6925,
+              "src": "98:15:28",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IListingFactory_$3669",
+                "typeIdentifier": "t_contract$_IListingFactory_$6925",
                 "typeString": "contract IListingFactory"
               }
             },
-            "id": 2487,
+            "id": 5743,
             "nodeType": "InheritanceSpecifier",
-            "src": "98:15:22"
+            "src": "98:15:28"
           }
         ],
         "contractDependencies": [
-          2233,
-          3669
+          3794,
+          6925,
+          8210
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 2497,
+        "id": 5753,
         "linearizedBaseContracts": [
-          2497,
-          3669,
-          2233
+          5753,
+          6925,
+          3794,
+          8210
         ],
         "name": "ListingFactory",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 2495,
+              "id": 5751,
               "nodeType": "Block",
-              "src": "188:2:22",
+              "src": "188:2:28",
               "statements": []
             },
             "documentation": null,
-            "id": 2496,
+            "id": 5752,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -332,49 +336,49 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 2492,
+                    "id": 5748,
                     "name": "_gateKeeper",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 2489,
-                    "src": "168:11:22",
+                    "referencedDeclaration": 5745,
+                    "src": "168:11:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   }
                 ],
-                "id": 2493,
+                "id": 5749,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2491,
+                  "id": 5747,
                   "name": "IListingFactory",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3669,
-                  "src": "152:15:22",
+                  "referencedDeclaration": 6925,
+                  "src": "152:15:28",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_IListingFactory_$3669_$",
+                    "typeIdentifier": "t_type$_t_contract$_IListingFactory_$6925_$",
                     "typeString": "type(contract IListingFactory)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "152:28:22"
+                "src": "152:28:28"
               }
             ],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2490,
+              "id": 5746,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2489,
+                  "id": 5745,
                   "name": "_gateKeeper",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2496,
-                  "src": "131:19:22",
+                  "scope": 5752,
+                  "src": "131:19:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -382,10 +386,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2488,
+                    "id": 5744,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "131:7:22",
+                    "src": "131:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -395,27 +399,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "130:21:22"
+              "src": "130:21:28"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2494,
+              "id": 5750,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "188:0:22"
+              "src": "188:0:28"
             },
-            "scope": 2497,
-            "src": "119:71:22",
+            "scope": 5753,
+            "src": "119:71:28",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 2498,
-        "src": "71:121:22"
+        "scope": 5754,
+        "src": "71:121:28"
       }
     ],
-    "src": "0:193:22"
+    "src": "0:193:28"
   },
   "compiler": {
     "name": "solc",
@@ -423,5 +427,5 @@
   },
   "networks": {},
   "schemaVersion": "3.0.0-beta.0",
-  "updatedAt": "2018-09-11T13:17:41.000Z"
+  "updatedAt": "2018-09-25T20:11:46.484Z"
 }

@@ -255,9 +255,9 @@ contract ForeignBridge is Ownable, Validatable, IApproveAndCallable {
       _data
     );
 
-    assert(_from != 0x0);
-    assert(_token != 0x0);
-    assert(_amount > 0);
+    require(_from != 0x0, "From address can't be the 0 address");
+    require(_token != 0x0, "Token address can't be the 0 address");
+    require(_amount > 0, "Amount must be greater than 0");
 
     require(LocalDTXToken(_token).allowance(_from, address(this)) >= _amount, "The allowance is less than the amount asking to be approved");
     LocalDTXToken(_token).transferFrom(_from, address(this), _amount);

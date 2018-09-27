@@ -3,10 +3,11 @@ pragma solidity ^0.4.24;
 import "./Purchase.sol";
 import "../sensor/Sensor.sol";
 import "../sensor/SensorRegistry.sol";
-import "../dtxtoken/DtxToken.sol";
+import "../token/LocalDTXToken.sol";
 import "@settlemint/solidity-mint/contracts/authentication/Secured.sol";
 import "@settlemint/solidity-mint/contracts/authentication/GateKeeper.sol";
 import "@settlemint/solidity-mint/contracts/utility/syncing/Syncable.sol";
+
 
 
 /**
@@ -24,7 +25,7 @@ contract PurchaseRegistry is Secured, Syncable {
   mapping (address => Purchase) public purchases;
   address[] public purchasesIndex;
 
-  DtxToken public token;
+  LocalDTXToken public token;
   SensorRegistry sensorRegistry;
   uint salePercentage = 1;
 
@@ -42,7 +43,7 @@ contract PurchaseRegistry is Secured, Syncable {
     Secured(_gateKeeper)
     public
   {
-    token = DtxToken(_token);
+    token = LocalDTXToken(_token);
     sensorRegistry = SensorRegistry(_sensorRegistry);
   }
 

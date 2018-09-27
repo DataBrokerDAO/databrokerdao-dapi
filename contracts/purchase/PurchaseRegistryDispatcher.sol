@@ -2,7 +2,7 @@ pragma solidity ^0.4.24;
 
 import "@settlemint/solidity-mint/contracts/utility/upgrading/Dispatcher.sol";
 import "../sensor/SensorRegistry.sol";
-import "../dtxtoken/DtxToken.sol";
+import "../token/LocalDTXToken.sol";
 import "./Purchase.sol";
 
 
@@ -16,7 +16,7 @@ contract PurchaseRegistryDispatcher is Dispatcher {
   bytes32 constant public CHANGE_SETTINGS_ROLE = "CHANGE_SETTINGS_ROLE";
   mapping (address => Purchase) public purchases;
   address[] public purchasesIndex;
-  DtxToken public token;
+  LocalDTXToken public token;
   SensorRegistry sensorRegistry;
   uint salePercentage = 1;
 
@@ -29,7 +29,7 @@ contract PurchaseRegistryDispatcher is Dispatcher {
     Secured(_gateKeeper)
   {
     // State also needs to initialized!
-    token = DtxToken(_token);
+    token = LocalDTXToken(_token);
     sensorRegistry = SensorRegistry(_sensorRegistry);
   }
 
